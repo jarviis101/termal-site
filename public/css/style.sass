@@ -1,0 +1,685 @@
+@font-face
+    font-family: "Cambria"
+    src: url("../fonts/Cambria.ttf")
+    
+@font-face 
+    font-family: 'Myriad Pro Regular'
+    font-style: normal
+    font-weight: normal
+    src: local('Myriad Pro Regular'), url('../fonts/MYRIADPRO-REGULAR.woff') format('woff')
+
+$myriad: 'Myriad Pro Regular'
+$cambria: 'Cambria'
+
+nav.navbar
+    padding: 0 100px
+    position: absolute
+    z-index: 9
+    width: 100%
+    background-color: rgba(0,0,0, .6)
+
+.navbar-brand
+    margin: 34px 0
+
+#navbarNav
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+
+    a
+        font-family: 'Cambria'
+        font-size: 20px
+        color: #fff
+        &:hover
+            text-decoration: none
+            color: #ccc
+    
+    .contact
+        a
+            font-size: 24px
+
+.slider-section
+    height: 1080px
+    .slick-list, .slick-track, .item
+        height: inherit
+    .item
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: center
+        z-index: 2
+        clip-path: polygon(0 0, 607% 0, 50% 100%, 0 91%)
+        .bg-image
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            z-index: 1
+            img
+                width: inherit
+        
+
+    .slick-next, .slick-prev
+        z-index: 2
+        width: 80px
+        height: 80px
+
+    .slick-prev:before, .slick-next:before
+        font-size: 80px
+
+    .slick-next
+        right: 90px !important
+
+    .slick-prev
+        left: 90px !important
+
+    .content
+        width: 100%
+        z-index: inherit
+        height: 100%
+        background: rgba(0,0,0,0.5)
+        display: flex
+        justify-content: center
+        align-items: center
+
+        .d-flex
+            justify-content: center
+            align-items: center
+            flex-direction: column
+
+            span
+                font-family: 'Cambria'
+                font-size: 58px
+                font-weight: 400
+                color: #fff
+            
+            .btn-learn-more
+                background-color: #ff0000
+                color: #fff
+                font-family: 'Cambria'
+                font-size: 30px
+                font-weight: 400
+                padding: 17px 20px 
+                &:hover
+                    text-decoration: none
+
+#index-our-target
+    margin-top: 40px
+
+    .our-target-title
+        font-family: 'Cambria'
+        color: #000000
+        font-weight: 400
+        font-size: 38px
+    .our-target-text 
+        font-family: 'Cambria'
+        color: #000000
+        font-weight: 400
+        font-size: 22px
+
+.section-gallery-index
+    margin-top: 40px
+    margin-bottom: 80px
+    .title-gallery  
+        font-family: 'Cambria'
+        color: #000000
+        font-weight: 400
+        font-size: 38px
+        margin-bottom: 25px
+    #index-lightgallery
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        .image-block
+            display: flex
+            justify-content: center
+            align-items: center
+            flex: 1 0 21%
+            height: 310px
+            img
+                height: inherit
+                width: 100%
+
+
+#footer
+    background: url('../img/footer-bg.png') center center no-repeat
+    background-size: 100%
+    padding-top: 40px
+    .left-side-footer
+        padding-top: 70px
+        .schedule-text
+            margin-top: 26px
+    .title-footer
+        font-family: 'Cambria'
+        color: #ffffff
+        font-weight: 400
+        font-size: 38px
+        margin-bottom: 25px
+    
+    form
+        margin-bottom: 40px
+        .form-group
+            margin-bottom: 7px
+            width: 100%
+            input
+                border-radius: 0
+                padding-top: 22px
+                padding-bottom: 22px
+            textarea
+                border-radius: 0
+                resize: none
+                height: 99px
+    span
+        font-family: $myriad
+        color: #ffffff
+    
+    .sbmt-btn-footer
+        margin-bottom: 35px
+        background-color: #ff0000
+        color: #fff
+        font-family: 'Cambria'
+        font-size: 30px
+        font-weight: 400
+        border: none
+        padding: 3px 28px
+        &:hover
+            text-decoration: none
+
+    .footer-link
+        color: #fff
+        &:hover
+            text-decoration: none
+        i
+            color: red
+
+#services-head-section
+    padding-top: 157px
+    background: url('../img/catalog-servics-bg.png') center top no-repeat
+    background-size: 100%
+
+    .bg-image
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: 1
+        img
+            width: inherit
+    .title-services-section
+        font-family: 'Cambria'
+        font-size: 58px
+        font-weight: 400
+        color: #fff
+        margin-top: 20px
+        text-transform: uppercase
+    .additional-text
+        font-family: 'Cambria'
+        color: #ffffff
+        font-weight: 400
+        font-size: 22px
+        margin-top: 30px
+        margin-bottom: 30px
+    
+    .list-of-services
+        margin-top: 80px
+        .services-item
+            margin-bottom: 60px
+        .img-block
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 100%
+            height: 100%
+            img
+                width: inherit
+        
+        .info-block
+            h3
+                margin-top: 20px
+                font-size: 30px
+                font-family: 'Cambria'
+                font-weight: 400
+                padding-left: 45px
+
+        .list-group-item
+            background: none
+            border: none
+            font-family: 'Cambria'
+            font-weight: 400
+            font-size: 22px
+            i.fas
+                color: #035281
+            
+#info-section, #catalog-section
+    padding-top: 157px
+    background: url('../img/info-bg.png') center top no-repeat
+    background-size: 100%
+    .title-info-section
+        font-family: 'Cambria'
+        font-size: 58px
+        font-weight: 400
+        color: #fff
+        margin-top: 20px
+        margin-bottom: 20px
+        text-transform: uppercase
+
+    #v-pills-tab
+        background-color: #ffffff
+        padding: 20px 0
+        height: fit-content
+
+    .nav-pills .nav-link
+        color: #000000
+
+    .nav-pills .nav-link.active, .nav-pills .show>.nav-link
+        background: transparent !important
+        color: #ff0000 !important
+
+    .title-menu
+        text-transform: uppercase
+        font-weight: 400
+        font-size: 22px
+        font-family: 'Cambria'
+        padding-left: 60px
+
+    .title-in-tab
+        color: #ffffff
+        font-size: 22px
+        font-family: 'Cambria'
+        margin-bottom: 20px
+    
+    .first-row-partners, .second-row-partners, .first-row-cert, .second-row-cert, .first-row-products
+        margin-bottom: 60px
+        .slick-slide
+            &:focus
+                outline: none
+                box-shadow: none
+        
+        .logo-block
+            display: flex
+            justify-content: center
+            flex-direction: row
+            height: 110px
+            img
+                height: inherit
+    .first-btn-row, .second-btn-row
+        display: flex
+        justify-content: center
+        margin-top: 50px
+        margin-bottom: 100px
+        .slick-prev, .slick-next
+            position: relative
+            &::before
+                color: #ba2f2f
+
+    .news-container, .video-container, .vacancy-container
+        display: flex
+        flex-direction: column
+        justify-content: center
+        .news-item, .video-item, .vacancy-item
+            display: flex
+            flex-direction: column
+            margin-left: 200px
+            .img-block
+                height: 560px
+                display: flex
+                align-items: center
+                margin-bottom: 30px
+                img
+                    width: 100%
+                    height: inherit
+            
+            .title-news, .video-title, .vacancy-title
+                font-weight: 400
+                font-size: 22px
+                font-family: 'Cambria'
+                margin-bottom: 30px
+
+            .text-news, .video-text, .vacancy-text
+                color: #000000
+                font-family: 'Cambria'
+                font-size: 22px
+
+            .to-news-btn
+                background-color: #ff0000
+                color: #fff
+                font-family: 'Cambria'
+                margin-bottom: 40px
+                width: fit-content
+                &:hover
+                    text-decoration: none
+
+    .video-container
+        .video-title
+            font-size: 28px !important
+            text-align: center
+        .video-item
+            margin-bottom: 80px
+
+    .vacancy-item
+        .img-block
+            height: 100% !important
+            img
+                width: 75% !important
+                height: inherit !important
+
+    .first-row-cert, .second-row-cert
+        .logo-block
+            display: flex
+            justify-content: center
+            flex-direction: row
+            height: 350px
+
+#contacts-section
+    padding-top: 157px
+    background: url('../img/contacts-bg.png') center top no-repeat
+    background-size: 100%
+    .title-section
+        font-family: 'Cambria'
+        font-size: 58px
+        font-weight: 400
+        color: #fff
+        margin-top: 20px
+        text-transform: uppercase
+        margin-bottom: 40px
+    .title-text
+        font-family: 'Cambria'
+        font-weight: 400
+        color: #fff
+        text-transform: uppercase
+        font-size: 28px
+    .add-text
+        font-family: 'Cambria'
+        font-size: 22px
+        color: #fff
+    .contact-block
+        margin-bottom: 40px
+    
+    .blacked
+        color: #000000
+
+    .form-contact
+        .form-group
+            margin-bottom: 7px
+            width: 100%
+            input
+                border-radius: 0
+                padding-top: 22px
+                padding-bottom: 22px
+                background-color: #E6E6E6
+            textarea
+                border-radius: 0
+                resize: none
+                background: #E6E6E6
+                height: 99px
+        #btn-send
+            background-color: #035281
+            color: #fff
+            padding-top: 12px
+            padding-bottom: 12px
+            font-family: 'Cambria'
+        
+    .map-embed
+        width: 100%
+
+#prod-catalog-section
+    padding-top: 157px
+    background: url('../img/catalogprod.png') center top no-repeat
+    background-size: 100%
+    .title-section
+        font-family: 'Cambria'
+        font-size: 58px
+        font-weight: 400
+        color: #fff
+        margin-top: 20px
+        text-transform: uppercase
+        margin-bottom: 40px
+    .title-text 
+        font-family: 'Cambria'
+        color: #fff
+        font-weight: 400
+        font-size: 22px
+        margin-bottom: 120px
+
+    .list-of-services
+        .service-item
+            margin-bottom: 40px
+            display: flex
+            a
+                position: relative
+                height: 320px
+                width: 100%
+                .img-block
+                    position: absolute
+                    z-index: 1
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    height: 100%
+                    img
+                        height: 100%
+                        width: 100%
+                span
+                    position: absolute
+                    z-index: 6
+                    bottom: 0px
+                    width: 100%
+                    height: 100%
+                    display: flex
+                    justify-content: center
+                    font-family: "Cambria"
+                    color: #fff
+                    font-weight: 400
+                    font-size: 26px
+                    align-items: flex-end
+                    padding-bottom: 20px
+                    -webkit-box-shadow: inset 0px -68px 7px 0px rgba(2,82,129,0.7)
+                    -moz-box-shadow: inset 0px -68px 7px 0px rgba(2,82,129,0.7)
+                    box-shadow: inset 0px -68px 7px 0px rgba(2,82,129,0.7)
+
+#about-us-section
+    padding-top: 157px
+    background: url('../img/about-us-bg.png') center top no-repeat
+    background-size: 100%
+    .title-section
+        font-family: 'Cambria'
+        font-size: 58px
+        font-weight: 400
+        color: #fff
+        margin-top: 20px
+        text-transform: uppercase
+        margin-bottom: 40px
+    .head-info
+        margin-bottom: 40px
+    .info
+        margin-bottom: 40px
+        .title
+            h3
+                font-family: "Cambria"
+                font-weight: 400
+                color: #fff
+                text-transform: uppercase
+                font-size: 28px
+        .add-text
+            p
+                font-family: "Cambria"
+                font-size: 22px
+                color: #fff
+        .blacked
+            color: #000 !important
+    .block-images
+        margin-bottom: 40px
+    .slider-item
+        margin: 30px 0
+        .pr
+            height: 130px
+            align-items: center
+        .slider-image, h5
+            margin-bottom: 30px
+        h5, span
+            text-align: center
+        h5
+            font-family: "Cambria"
+            font-size: 26px
+        span
+            font-family: "Cambria"
+            font-size: 22px
+    .slick-slide
+        &:focus
+            outline: none
+            box-shadow: none
+    #slider-btn
+        display: flex
+        justify-content: center
+        margin-top: 50px
+        margin-bottom: 100px
+        .slick-prev, .slick-next
+            position: relative
+            &::before
+                color: #ba2f2f
+#footer-second
+    .title-footer
+        font-family: 'Cambria'
+        color: #000
+        font-weight: 400
+        font-size: 38px
+        margin-bottom: 25px
+    .map-embed
+        width: 100%
+        height: 100%
+    .no-pad
+        padding: 0
+    form
+        margin-bottom: 40px
+        .form-group
+            margin-bottom: 7px
+            width: 100%
+            input
+                border-radius: 0
+                padding-top: 22px
+                padding-bottom: 22px
+            textarea
+                border-radius: 0
+                resize: none
+                height: 99px
+        .sbmt-btn-footer
+            margin-bottom: 35px
+            background-color: #ff0000
+            color: #fff
+            font-family: 'Cambria'
+            font-size: 30px
+            font-weight: 400
+            border: none
+            padding: 3px 28px
+            margin-top: 30px
+            &:hover
+                text-decoration: none
+    .other-info
+        background: url('../img/footer-bg.png') center center no-repeat
+        background-size: 101%
+        padding: 40px 0
+        span
+            font-family: $myriad
+            color: #ffffff
+
+    .footer-link
+        color: #fff
+        &:hover
+            text-decoration: none
+        i
+            color: red
+    .footer-name-comp
+        margin-bottom: 26px
+    
+    .pad
+        padding: 5px 0
+
+#catalog-section
+    background-image: url('../img/catalogprod.png')
+    .title-tab
+        flex-direction: column
+        justify-content: center
+        margin-bottom: 40px
+        h3, span, a
+            text-align: center
+        .title-in-tab
+            font-size: 28px
+        span, a
+            font-size: 22px
+            font-family: 'Cambria'
+            color: #fff
+            font-weight: 400
+            &:hover
+                text-decoration: none
+    #v-pills-tab
+        margin-top: 70px
+    
+    .first-container-products 
+        .first-row-products
+            .product-item
+                margin-bottom: 30px
+                .img-block
+                    display: flex
+                    height: 100%
+                    width: 100%
+                    justify-content: flex-start
+                    align-items: flex-end
+                    img
+                        height: fit-content
+                background: #fff
+                .name
+                    font-family: 'Cambria'
+                    font-weight: 400 
+                    margin-top: 30px
+                    font-size: 22px
+                .price
+                    font-family: 'Cambria'
+                    font-weight: 400 
+                    margin-top: 30px
+                    font-size: 18px
+                .additional-info
+                    font-family: 'Cambria'
+                    font-weight: 400 
+                    font-size: 14px
+                    color: #000
+                    &:hover
+                        text-decoration: none
+                .btn-order
+                    background-color: #ff0000
+                    color: #fff
+                    font-family: 'Cambria'
+                    font-size: 18px
+                    font-weight: 400
+                    padding: 8px 20px 
+                    margin-bottom: 30px
+                    margin-right: 10px
+                    &:hover
+                        text-decoration: none
+    // .slick-list
+    //     display: flex !important
+    //     justify-content: center !important
+    // .slick-track
+    //     width: 100% !important
+    // .ful-w
+    //     width: 100% !important
+    //     display: flex !important
+    // .slick-slide
+    //     width: 50% !important
+
+    .first-row-products
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+
+    // .products-btn-row
+    //     display: flex
+    //     justify-content: center
+    //     margin-top: 50px
+    //     margin-bottom: 100px
+    //     .slick-prev, .slick-next
+    //         position: relative
+    //         display: block
+    //         &::before
+    //             color: #ba2f2f
