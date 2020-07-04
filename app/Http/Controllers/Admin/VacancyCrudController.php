@@ -65,7 +65,7 @@ class VacancyCrudController extends CrudController
 
         CRUD::field('name')->type('text')->label('Название');
         CRUD::field('image')->type('image')->upload(true)->label('Изображение');
-        CRUD::field('description')->type('tinymce')->label('Содержание');
+        CRUD::field('description')->type('wysiwyg')->label('Содержание');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

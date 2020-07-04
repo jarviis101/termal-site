@@ -11,8 +11,8 @@
     @isset($meta_description)
         <meta name="description" content="{{ $meta_description }}">
     @endisset
-    @isset($meta_keywds)
-        <meta name="keywords" content="{{ $meta_keywds }}">
+    @isset($meta_keywords)
+        <meta name="keywords" content="{{ $meta_keywords }}">
     @endisset
     @isset($title)
         <title>

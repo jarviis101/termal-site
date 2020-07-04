@@ -67,7 +67,7 @@ class NewsCrudController extends CrudController
         CRUD::field('name')->type('text')->label('Название');
         CRUD::field('slug')->type('hidden');
         CRUD::field('image')->type('image')->upload(true)->label('Изображение');
-        CRUD::field('content')->type('tinymce')->label('Содержание');
+        CRUD::field('content')->type('wysiwyg')->label('Содержание');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
