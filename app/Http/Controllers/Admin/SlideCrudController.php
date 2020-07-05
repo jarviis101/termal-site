@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\VacancyRequest;
+use App\Http\Requests\SlideRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class VacancyCrudController
+ * Class SlideCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class VacancyCrudController extends CrudController
+class SlideCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -26,9 +26,9 @@ class VacancyCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Vacancy::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/vacancy');
-        CRUD::setEntityNameStrings('вакансию', 'вакансии');
+        CRUD::setModel(\App\Models\Slide::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/slide');
+        CRUD::setEntityNameStrings('слайд', 'слайды');
     }
 
     /**
@@ -41,9 +41,9 @@ class VacancyCrudController extends CrudController
     {
         // CRUD::setFromDb(); // columns
 
-        CRUD::column('name')->type('text')->label('Название');
+        CRUD::column('title')->type('text')->label('Заглавие');
+        CRUD::column('link')->type('text')->label('Ссылка');
         CRUD::column('image')->type('image')->label('Изображение');
-        CRUD::column('description')->type('markdown')->label('Описание');
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -59,13 +59,13 @@ class VacancyCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(VacancyRequest::class);
+        CRUD::setValidation(SlideRequest::class);
 
         // CRUD::setFromDb(); // fields
 
-        CRUD::field('name')->type('text')->label('Название');
+        CRUD::field('title')->type('text')->label('Название');
+        CRUD::field('link')->type('text')->label('Ссылка');
         CRUD::field('image')->type('image')->upload(true)->label('Изображение');
-        CRUD::field('description')->type('wysiwyg')->label('Содержание');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

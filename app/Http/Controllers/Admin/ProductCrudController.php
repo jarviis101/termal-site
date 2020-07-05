@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\VacancyRequest;
+use App\Http\Requests\ProductRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class VacancyCrudController
+ * Class ProductCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class VacancyCrudController extends CrudController
+class ProductCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -26,9 +26,9 @@ class VacancyCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Vacancy::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/vacancy');
-        CRUD::setEntityNameStrings('вакансию', 'вакансии');
+        CRUD::setModel(\App\Models\Product::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/product');
+        CRUD::setEntityNameStrings('товар', 'товары');
     }
 
     /**
@@ -43,6 +43,7 @@ class VacancyCrudController extends CrudController
 
         CRUD::column('name')->type('text')->label('Название');
         CRUD::column('image')->type('image')->label('Изображение');
+        CRUD::column('category_id')->type('select')->label('Категория')->model('App\Models\Category')->name('category_id')->entity('category');
         CRUD::column('description')->type('markdown')->label('Описание');
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -59,14 +60,15 @@ class VacancyCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(VacancyRequest::class);
+        CRUD::setValidation(ProductRequest::class);
 
         // CRUD::setFromDb(); // fields
 
         CRUD::field('name')->type('text')->label('Название');
+        CRUD::field('slug')->type('hidden');
         CRUD::field('image')->type('image')->upload(true)->label('Изображение');
         CRUD::field('description')->type('wysiwyg')->label('Содержание');
-
+        CRUD::field('category_id')->label('Категория')->type('select2')->name('category_id')->entity('category')->attribute('name')->model('App\Models\Category');
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');

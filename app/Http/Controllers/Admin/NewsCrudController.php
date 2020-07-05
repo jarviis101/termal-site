@@ -44,7 +44,7 @@ class NewsCrudController extends CrudController
         CRUD::column('name')->type('text')->label('Название');
         CRUD::column('slug')->type('text');
         CRUD::column('image')->type('image')->label('Изображение');
-        // CRUD::column('content')->type('text')->label('Содержание');
+        CRUD::column('content')->type('markdown')->label('Содержание');
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');

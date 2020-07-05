@@ -6,7 +6,7 @@ use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class User extends Model
+class Slide extends Model
 {
     use CrudTrait;
 
@@ -16,7 +16,7 @@ class User extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'users';
+    protected $table = 'slides';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
@@ -35,7 +35,7 @@ class User extends Model
         // or use your own disk, defined in config/filesystems.php
         $disk = config('backpack.base.root_disk_name');
         // destination path relative to the disk above
-        $destination_path = "public/uploads/users";
+        $destination_path = "public/uploads/slides";
 
         // if the image was erased
         if ($value==null) {
