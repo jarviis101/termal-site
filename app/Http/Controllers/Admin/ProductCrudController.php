@@ -42,6 +42,7 @@ class ProductCrudController extends CrudController
         // CRUD::setFromDb(); // columns
 
         CRUD::column('name')->type('text')->label('Название');
+        CRUD::column('price')->type('text')->label('Цена');
         CRUD::column('image')->type('image')->label('Изображение');
         CRUD::column('category_id')->type('select')->label('Категория')->model('App\Models\Category')->name('category_id')->entity('category');
         CRUD::column('description')->type('markdown')->label('Описание');
@@ -65,6 +66,7 @@ class ProductCrudController extends CrudController
         // CRUD::setFromDb(); // fields
 
         CRUD::field('name')->type('text')->label('Название');
+        CRUD::field('price')->type('text')->label('Цена');
         CRUD::field('slug')->type('hidden');
         CRUD::field('image')->type('image')->upload(true)->label('Изображение');
         CRUD::field('description')->type('wysiwyg')->label('Содержание');

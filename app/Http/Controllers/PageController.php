@@ -5,26 +5,63 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Backpack\PageManager\app\Models\Page;
 
-// use App\Models\Page;
+use App\Models\Slide;
+use App\Models\Image;
+
+use App\Models\Service;
+
+use App\Models\Advantage;
+
+use App\Models\Contact;
 
 class PageController extends Controller
 {
-    public function index($slug = '/', $subs = null)
+    public static function get_all_pages()
     {
-        $page = Page::findBySlug($slug);
+        return Page::all();
+    }
+    public function index()
+    {
+        $page = Page::findBySlug('/');
+        $slides = Slide::all();
+        $images = Image::all();
         if (!$page)
         {
             abort(404, 'Please go back to our <a href="'.url('').'">homepage</a>.');
         }
-
-        return view('index')->with('data', $page);
-//         $this->data['title'] = $page->title;
-//         $this->data['content'] = $page->content;
-//         $this->data['meta_title'] = $page->meta_title;
-//         $this->data['meta_keywords'] = $page->meta_keywords;
-//         $this->data['meta_description'] = $page->meta_description;
-//         $this->data['meta_tags'] = $page->extras;
-//         $this->data['page'] = $page->withFakes();
-
+        return view('index')->with('data', $page)
+            ->with('slides', $slides)
+            ->with('images', $images);
+    }
+    public function services()
+    {
+        $page = Page::findBySlug('services');
+        $services = Service::all();
+        if (!$page)
+        {
+            abort(404, 'Please go back to our <a href="'.url('').'">homepage</a>.');
+        }
+        return view('services')->with('data', $page)
+            ->with('services', $services);
+    }
+    public function about(){
+        $page = Page::findBySlug('about');
+        $advantages = Advantage::all();
+        if (!$page)
+        {
+            abort(404, 'Please go back to our <a href="'.url('').'">homepage</a>.');
+        }
+        return view('about-company')->with('data', $page)
+            ->with('advantages', $advantages);
+    }
+    public function contacts(){
+        $page = Page::findBySlug('contacts');
+        $contacts = Contact::all();
+        if (!$page)
+        {
+            abort(404, 'Please go back to our <a href="'.url('').'">homepage</a>.');
+        }
+        return view('contacts')->with('data', $page)
+            ->with('contacts', $contacts);
     }
 }

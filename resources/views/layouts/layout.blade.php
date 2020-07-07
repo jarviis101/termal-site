@@ -27,7 +27,7 @@
 
     @yield('content')
 
-    @if(Request::path() == '/about-company')
+    @if(Request::path() == 'about')
         @include('partials.footer_2')
     @else
         @include('partials.footer')

@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\NewsRequest;
+use App\Http\Requests\AdvantageRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class NewsCrudController
+ * Class AdvantageCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class NewsCrudController extends CrudController
+class AdvantageCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -26,9 +26,9 @@ class NewsCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\News::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/news');
-        CRUD::setEntityNameStrings('новость', 'новости');
+        CRUD::setModel(\App\Models\Advantage::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/advantage');
+        CRUD::setEntityNameStrings('преимущество', 'преимущества');
     }
 
     /**
@@ -39,10 +39,9 @@ class NewsCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('name')->type('text')->label('Название');
-        CRUD::column('slug')->type('text');
-        CRUD::column('image')->type('image')->label('Изображение');
-        CRUD::column('content')->type('markdown')->label('Содержание');
+        CRUD::column('title')->type('text')->label('Название');
+        CRUD::column('icon')->type('image')->label('Изображение(иконка)');
+        CRUD::column('description')->type('markdown')->label('Содержание');
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -58,13 +57,13 @@ class NewsCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(NewsRequest::class);
+        CRUD::setValidation(AdvantageRequest::class);
 
-        CRUD::field('name')->type('text')->label('Название');
-        CRUD::field('slug')->type('hidden');
-        CRUD::field('image')->type('image')->upload(true)->label('Изображение');
-        CRUD::field('content')->type('wysiwyg')->label('Содержание');
+        CRUD::setFromDb(); // fields
 
+        CRUD::field('title')->type('text')->label('Название');
+        CRUD::field('icon')->type('image')->upload(true)->label('Изображение(иконка)');
+        CRUD::field('description')->type('wysiwyg')->label('Описание');
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');

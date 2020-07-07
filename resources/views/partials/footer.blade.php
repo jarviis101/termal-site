@@ -2,27 +2,27 @@
     <div class="row">
         <div class="container">
             <div class="row">
-                <div class="col-xl-6 left-side-footer">
+                <div class="col-12 col-sm-12 сol-md-12 col-lg-12 col-xl-6 left-side-footer">
                     <div class="row">
-                        <div class="col-xl-6">
-                            <div class="row">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div class="d-flex">
                                     <span>
                                         ТОВ БУДІВЕЛЬНА КОМПАНІЯ "ЛАЙФ-БУД"
                                     </span>
                             </div>
-                            <div class="row schedule-text">
+                            <div class="d-flex schedule-text">
                                     <span>
                                         Графік роботи:
                                     </span>
                             </div>
-                            <div class="row">
+                            <div class="d-flex">
                                     <span>
                                         Пн-Пт: 08 : 17:00
                                     </span>
                             </div>
                         </div>
-                        <div class="col-xl-6">
-                            <div class="row">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div class="d-flex flex-column">
                                 <div>
                                     <a class="footer-link" href="mailto:office@____________.com.ua">
                                         <i class="fas fa-phone"></i>
@@ -45,35 +45,36 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-6 right-side-footer">
+                <div class="col-12 col-sm-12 сol-md-12 col-lg-12 col-xl-6 right-side-footer">
                     <div class="row justify-content-center">
                         <h3 class="title-footer">Have questions?</h3>
                     </div>
-                    <div class="row form-callback">
-                        <form action="" class="row">
-                            <div class="col-xl-6">
-                                <div class="row">
-                                    <div class="form-group">
-                                        <input type="text" name="name" class="col-12 form-control" placeholder="Name" />
+                    <div class="d-flex form-callback">
+                        <form action="" class="d-flex flex-column">
+                            <div class="row">
+                                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                    <div class="row current">
+                                        <div class="form-group">
+                                            <input type="text" name="name" class="col-12 form-control" placeholder="Name">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="email" class="col-12 form-control" placeholder="Email">
+                                        </div>
                                     </div>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                                     <div class="form-group">
-                                        <input type="text" name="email" class="col-12 form-control" placeholder="Email" />
+                                        <textarea class="form-control" name="message" placeholder="Massage"></textarea>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-6">
-                                <div class="form-group">
-                                    <textarea class="form-control" name="message" placeholder="Massage"></textarea>
-                                </div>
+                            <div class="row justify-content-center">
+                                <input type="submit" class="sbmt-btn-footer" value="Send">
                             </div>
+                        </form>
                     </div>
-                    <div class="row justify-content-center">
-                        <input type="submit" class="sbmt-btn-footer" value="Send">
-                    </div>
-                    </form>
                 </div>
             </div>
         </div>
     </div>
-
 </footer>

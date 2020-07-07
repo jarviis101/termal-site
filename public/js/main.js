@@ -1,5 +1,19 @@
 $(document).ready(function(){
-    $('.slider-section').slick();
+    $('.slider-section').slick({
+        // autoplay: true,
+        arrows: true,
+        responsive: [
+            {
+              breakpoint: 992,
+              settings: {
+                arrows: false
+              }
+            }
+          ]
+    });
+
+
+
     lightGallery(document.getElementById('index-lightgallery')); 
 
     $('.first-row-partners').slick({
@@ -36,10 +50,40 @@ $(document).ready(function(){
 
     $('.slider-advantages').slick({
         infinite: true,
+        arrows: true,
         slidesToShow: 4,
         slidesToScroll: 1,
         prevArrow: $('#adv-prev'),
         nextArrow: $('#adv-next'),
+        responsive: [
+            {
+              breakpoint: 991,
+              settings: {
+                    slidesToShow: 3,
+                    arrows: false,
+                    prevArrow: '',
+                    nextArrow: ''
+              }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                      slidesToShow: 2,
+                      arrows: false,
+                      prevArrow: null,
+                      nextArrow: null
+                }
+            },
+            {
+                breakpoint: 425,
+                settings: {
+                      slidesToShow: 1,
+                      arrows: false,
+                      prevArrow: null,
+                      nextArrow: null
+                }
+            }
+        ]
     });
 
     // $('.first-row-products').slick({

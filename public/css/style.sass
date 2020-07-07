@@ -11,6 +11,14 @@
 $myriad: 'Myriad Pro Regular'
 $cambria: 'Cambria'
 
+$h1: 3.85rem
+$h2: 2.85rem
+$a: 1.3rem
+$p: 1.3rem
+$padding_btn: 10px 15px
+$btn_font: 1.5rem
+
+
 nav.navbar
     padding: 0 100px
     position: absolute
@@ -19,7 +27,7 @@ nav.navbar
     background-color: rgba(0,0,0, .6)
 
 .navbar-brand
-    margin: 34px 0
+    margin: 15px 0
 
 #navbarNav
     display: flex
@@ -28,7 +36,7 @@ nav.navbar
 
     a
         font-family: 'Cambria'
-        font-size: 20px
+        font-size: $a
         color: #fff
         &:hover
             text-decoration: none
@@ -36,10 +44,81 @@ nav.navbar
     
     .contact
         a
-            font-size: 24px
+            font-size: $a
+
+#nav-md
+    @media screen and ( min-width: 1199px)
+        display: flex
+    @media screen and (max-width: 1198px)
+        display: none
+
+.sidenav, .btn-toggle-menu
+    @media screen and ( min-width: 1199px)
+        display: none
+
+.sidenav      
+    @media screen and (max-width: 1198px)
+        .dropdown
+            &:hover 
+                .dropdown-menu 
+                    display: block
+        height: 100%
+        width: 0
+        position: fixed
+        z-index: 99
+        top: 0
+        left: 0
+        background-color: #111
+        overflow-x: hidden
+        padding-top: 60px
+        transition: 0.5s
+        display: flex
+        flex-direction: column
+        li
+            list-style-type: none
+        .dropdown-menu
+            background-color: transparent
+            margin-left: 15px
+            position: static
+            width: 94%
+        a 
+            padding: 8px 8px 8px 32px
+            text-decoration: none
+            font-size: 16px
+            color: #818181
+            display: block
+            transition: 0.3s
+            &:hover
+                color: #f1f1f1
+        .dropdown-menu>li>a
+            white-space: normal
+        .closebtn 
+            position: absolute
+            top: 0
+            right: 25px
+            font-size: 36px
+            margin-left: 50px
+    @media screen and (max-height: 450px) 
+        padding-top: 50px
+
+.btn-toggle-menu
+    position: fixed
+    top: 20px
+    right: 20px
+    z-index: 999
+.btn-toggle-menu i.fas
+    color: #fff
+    font-size: 26px
 
 .slider-section
     height: 1080px
+    @media screen and ( max-width: 1439px )
+        height: 850px
+    @media screen and ( max-width: 991px )
+        height: 550px
+    @media screen and ( max-width: 425px )
+        height: 350px
+        
     .slick-list, .slick-track, .item
         height: inherit
     .item
@@ -48,7 +127,9 @@ nav.navbar
         align-items: center
         justify-content: center
         z-index: 2
-        clip-path: polygon(0 0, 607% 0, 50% 100%, 0 91%)
+        @media screen and ( min-width: 1919px )
+            clip-path: polygon(0 0, 607% 0, 50% 100%, 0 91%)
+            
         .bg-image
             position: absolute
             top: 0
@@ -57,8 +138,20 @@ nav.navbar
             height: 100%
             z-index: 1
             img
-                width: inherit
-        
+                @media screen and (max-width: 1024px)
+                    height: inherit
+                    width: initial
+                @media screen and (max-width: 1439px)
+                    height: inherit
+                    width: inherit
+                @media screen and (min-width: 1440px)
+                    height: inherit
+                @media screen and (min-width: 1600px)
+                    width: inherit
+                @media screen and (max-width: 575px)
+                    height: inherit
+                    width: initial
+                    
 
     .slick-next, .slick-prev
         z-index: 2
@@ -70,10 +163,13 @@ nav.navbar
 
     .slick-next
         right: 90px !important
+        @media screen and ( max-width: 1440px )
+            right: 75px !important
 
     .slick-prev
         left: 90px !important
-
+        @media screen and ( max-width: 1440px )
+            left: 75px !important
     .content
         width: 100%
         z-index: inherit
@@ -90,19 +186,36 @@ nav.navbar
 
             span
                 font-family: 'Cambria'
-                font-size: 58px
+                font-size: $h1
                 font-weight: 400
+                text-align: center
                 color: #fff
+                @media screen and (max-width: 991px)
+                    width: 70%
+                    font-size: 1.85rem
+                @media screen and (min-width: 992px)
+                    width: 60%
+                    font-size: 2.85rem
+                @media screen and (max-width: 767px)
+                    width: 100%
+                    font-size: 1.5rem
+                    
+                    
             
             .btn-learn-more
                 background-color: #ff0000
                 color: #fff
                 font-family: 'Cambria'
-                font-size: 30px
+                font-size: $btn_font
                 font-weight: 400
-                padding: 17px 20px 
+                margin-top: 20px
+                padding: $padding_btn
                 &:hover
                     text-decoration: none
+                @media screen and ( max-width: 575px )
+                    font-size: 1rem
+                    padding: 5px 10px 
+                    
 
 #index-our-target
     margin-top: 40px
@@ -111,12 +224,22 @@ nav.navbar
         font-family: 'Cambria'
         color: #000000
         font-weight: 400
-        font-size: 38px
+        font-size: $h2
+        text-align: center
+        @media screen and (max-width: 991px)
+            font-size: 1.85rem
+        @media screen and (min-width: 992px)
+            font-size: 2.85rem
+        @media screen and (max-width: 767px)
+            font-size: 1.5rem
+            
     .our-target-text 
         font-family: 'Cambria'
         color: #000000
         font-weight: 400
-        font-size: 22px
+        font-size: $p
+        @media screen and (max-width: 575px)
+            font-size: 1rem
 
 .section-gallery-index
     margin-top: 40px
@@ -125,40 +248,63 @@ nav.navbar
         font-family: 'Cambria'
         color: #000000
         font-weight: 400
-        font-size: 38px
+        font-size: $h2
         margin-bottom: 25px
+        @media screen and ( max-width: 991px)
+            font-size: 1.875rem
     #index-lightgallery
         display: flex
         flex-direction: row
         flex-wrap: wrap
+        @media screen and ( max-width: 768px )
+            flex-direction: column
         .image-block
             display: flex
             justify-content: center
             align-items: center
             flex: 1 0 21%
             height: 310px
+            @media screen and ( max-width: 1440px )
+                height: 240px
+            @media screen and ( max-width: 1024px )
+                height: 160px
+            @media screen and ( max-width: 768px )
+                width: 100%
+                height: 240px
+                
             img
                 height: inherit
                 width: 100%
+                @media screen and ( max-width: 768px )
+                    height: initial
 
 
 #footer
     background: url('../img/footer-bg.png') center center no-repeat
     background-size: 100%
     padding-top: 40px
+    @media screen and ( max-width: 1199px )
+        background-size: cover
+        
     .left-side-footer
         padding-top: 70px
-        .schedule-text
-            margin-top: 26px
+        // .schedule-text
+        //     margin-top: 26px
     .title-footer
         font-family: 'Cambria'
         color: #ffffff
         font-weight: 400
-        font-size: 38px
+        font-size: $h2
         margin-bottom: 25px
-    
+        @media screen and ( max-width: 991px)
+            font-size: 1.875rem
+        @media screen and ( max-width: 1199px)
+            margin-top: 20px
+    .form-callback
+        @media screen and ( max-width: 1199px)
+            justify-content: center
+            
     form
-        margin-bottom: 40px
         .form-group
             margin-bottom: 7px
             width: 100%
@@ -175,17 +321,27 @@ nav.navbar
         color: #ffffff
     
     .sbmt-btn-footer
-        margin-bottom: 35px
+        margin-bottom: 15px
         background-color: #ff0000
         color: #fff
         font-family: 'Cambria'
-        font-size: 30px
+        font-size: $btn_font
         font-weight: 400
         border: none
-        padding: 3px 28px
+        margin-top: 20px
+        padding: $padding_btn
+        @media screen and (max-width: 575px)
+            font-size: 1rem
+            padding: 5px 10px 
         &:hover
             text-decoration: none
-
+                
+    .current
+        @media screen and (max-width: 768px)
+            flex-direction: column
+            margin-left: 0
+            margin-right: 0
+            
     .footer-link
         color: #fff
         &:hover
@@ -194,33 +350,41 @@ nav.navbar
             color: red
 
 #services-head-section
-    padding-top: 157px
+    padding-top: 119px
     background: url('../img/catalog-servics-bg.png') center top no-repeat
     background-size: 100%
-
-    .bg-image
-        position: absolute
-        top: 0
-        left: 0
-        width: 100%
-        height: 100%
-        z-index: 1
-        img
-            width: inherit
+    @media screen and ( max-width: 1199px )
+        background-size: 130%
+        padding-top: 30px
+    @media screen and ( max-width: 991px )
+        background-size: 179%
+    @media screen and ( max-width: 575px )
+        background-size: auto
+        
     .title-services-section
         font-family: 'Cambria'
-        font-size: 58px
+        font-size: $h2
         font-weight: 400
         color: #fff
         margin-top: 20px
         text-transform: uppercase
+        @media screen and (max-width: 991px)
+            font-size: 1.85rem
+        @media screen and (min-width: 992px)
+            font-size: 2.85rem
+        @media screen and (max-width: 767px)
+            font-size: 1.5rem
+
     .additional-text
         font-family: 'Cambria'
         color: #ffffff
         font-weight: 400
-        font-size: 22px
+        font-size: $p
         margin-top: 30px
         margin-bottom: 30px
+        @media screen and (max-width: 575px)
+            font-size: 1rem
+    
     
     .list-of-services
         margin-top: 80px
@@ -238,7 +402,7 @@ nav.navbar
         .info-block
             h3
                 margin-top: 20px
-                font-size: 30px
+                font-size: 1.5rem
                 font-family: 'Cambria'
                 font-weight: 400
                 padding-left: 45px
@@ -248,10 +412,220 @@ nav.navbar
             border: none
             font-family: 'Cambria'
             font-weight: 400
-            font-size: 22px
+            font-size: 1rem
             i.fas
                 color: #035281
             
+#about-us-section
+    padding-top: 119px
+    background: url('../img/about-us-bg.png') center top no-repeat
+    background-size: 100%
+    @media screen and ( max-width: 1199px )
+        background-size: 130%
+        padding-top: 30px
+    @media screen and ( max-width: 991px )
+        background-size: 179%
+    @media screen and ( max-width: 575px )
+        background-size: 205%
+    .title-section
+        font-family: 'Cambria'
+        font-size: $h2
+        font-weight: 400
+        color: #fff
+        margin-top: 20px
+        text-transform: uppercase
+        margin-bottom: 40px
+        @media screen and (max-width: 991px)
+            font-size: 1.85rem
+        @media screen and (min-width: 992px)
+            font-size: 2.85rem
+        @media screen and (max-width: 767px)
+            font-size: 1.5rem
+    .head-info
+        margin-bottom: 40px
+    .info
+        margin-bottom: 40px
+        h3
+            font-family: "Cambria"
+            font-weight: 400
+            color: #fff
+            text-transform: uppercase
+            font-size: 1.9rem
+            @media screen and ( max-width: 991px )
+                color: #000
+                text-align: center
+        p
+            font-family: "Cambria"
+            font-size: $p
+            color: #fff
+            @media screen and ( max-width: 991px )
+                color: #000
+            @media screen and (max-width: 575px)
+                font-size: 1rem
+                
+        .blacked
+            color: #000 !important
+    .block-images
+        margin-bottom: 40px
+    .slider-item
+        margin: 30px 0
+        .pr
+            height: 130px
+            align-items: center
+        .slider-image, h5
+            margin-bottom: 30px
+        h5, span
+            text-align: center
+        h5
+            font-family: "Cambria"
+            font-size: 1.5rem
+        span
+            font-family: "Cambria"
+            font-size: $p
+    .slick-slide
+        &:focus
+            outline: none
+            box-shadow: none
+    #slider-btn
+        display: flex
+        justify-content: center
+        margin-top: 50px
+        margin-bottom: 100px
+        @media screen and ( max-width: 991px )
+            display: none            
+        .slick-prev, .slick-next
+            position: relative
+            &::before
+                color: #ba2f2f
+#footer-second
+    .title-footer
+        font-family: 'Cambria'
+        color: #000
+        font-weight: 400
+        font-size: $h2
+        margin-bottom: 25px
+    .map-embed
+        width: 100%
+        height: 100%
+    .current-row
+        @media screen and ( max-width: 1199px )
+            margin: 0
+            
+    .no-pad
+        padding: 0
+    form
+        margin-bottom: 40px
+        .form-group
+            margin-bottom: 7px
+            width: 100%
+            input
+                border-radius: 0
+                padding-top: 22px
+                padding-bottom: 22px
+            textarea
+                border-radius: 0
+                resize: none
+                height: 99px
+        .sbmt-btn-footer
+            margin-bottom: 35px
+            background-color: #ff0000
+            color: #fff
+            font-family: 'Cambria'
+            font-size: 30px
+            font-weight: 400
+            border: none
+            padding: 3px 28px
+            margin-top: 30px
+            &:hover
+                text-decoration: none
+    .other-info
+        background: url('../img/footer-bg.png') center center no-repeat
+        background-size: cover
+        padding: 40px 0
+        span
+            font-family: $myriad
+            color: #ffffff
+
+    .footer-link
+        color: #fff
+        &:hover
+            text-decoration: none
+        i
+            color: red
+    .footer-name-comp
+        margin-bottom: 20px
+    
+    .pad
+        padding: 5px 15px
+#contacts-section
+    padding-top: 119px
+    background: url('../img/contacts-bg.png') center top no-repeat
+    background-size: 100%
+    @media screen and ( max-width: 1199px )
+        background-size: 130%
+        padding-top: 30px
+    @media screen and ( max-width: 991px )
+        background-size: 179%
+    @media screen and ( max-width: 575px )
+        background-size: 205%
+    .title-section
+        font-family: 'Cambria'
+        font-size: $h2
+        font-weight: 400
+        color: #fff
+        margin-top: 20px
+        text-transform: uppercase
+        margin-bottom: 40px
+        @media screen and (max-width: 991px)
+            font-size: 1.85rem
+        @media screen and (min-width: 992px)
+            font-size: 2.85rem
+        @media screen and (max-width: 767px)
+            font-size: 1.5rem
+    .title-text
+        font-family: 'Cambria'
+        font-weight: 400
+        color: #fff
+        text-transform: uppercase
+        font-size: 1.9rem
+        @media screen and (max-width: 575px)
+            font-size: 1.5rem
+    .add-text
+        font-family: 'Cambria'
+        font-size: $p
+        color: #fff
+        @media screen and (max-width: 575px)
+            font-size: 1rem
+    .contact-block
+        margin-bottom: 40px
+    
+    .blacked
+        color: #000000
+
+    .form-contact
+        .form-group
+            margin-bottom: 7px
+            width: 100%
+            input
+                border-radius: 0
+                padding-top: 22px
+                padding-bottom: 22px
+                background-color: #E6E6E6
+            textarea
+                border-radius: 0
+                resize: none
+                background: #E6E6E6
+                height: 99px
+        #btn-send
+            background-color: #035281
+            color: #fff
+            padding-top: 12px
+            padding-bottom: 12px
+            font-family: 'Cambria'
+        
+    .map-embed
+        width: 100%
+
 #info-section, #catalog-section
     padding-top: 157px
     background: url('../img/info-bg.png') center top no-repeat
@@ -372,57 +746,6 @@ nav.navbar
             flex-direction: row
             height: 350px
 
-#contacts-section
-    padding-top: 157px
-    background: url('../img/contacts-bg.png') center top no-repeat
-    background-size: 100%
-    .title-section
-        font-family: 'Cambria'
-        font-size: 58px
-        font-weight: 400
-        color: #fff
-        margin-top: 20px
-        text-transform: uppercase
-        margin-bottom: 40px
-    .title-text
-        font-family: 'Cambria'
-        font-weight: 400
-        color: #fff
-        text-transform: uppercase
-        font-size: 28px
-    .add-text
-        font-family: 'Cambria'
-        font-size: 22px
-        color: #fff
-    .contact-block
-        margin-bottom: 40px
-    
-    .blacked
-        color: #000000
-
-    .form-contact
-        .form-group
-            margin-bottom: 7px
-            width: 100%
-            input
-                border-radius: 0
-                padding-top: 22px
-                padding-bottom: 22px
-                background-color: #E6E6E6
-            textarea
-                border-radius: 0
-                resize: none
-                background: #E6E6E6
-                height: 99px
-        #btn-send
-            background-color: #035281
-            color: #fff
-            padding-top: 12px
-            padding-bottom: 12px
-            font-family: 'Cambria'
-        
-    .map-embed
-        width: 100%
 
 #prod-catalog-section
     padding-top: 157px
@@ -479,122 +802,7 @@ nav.navbar
                     -moz-box-shadow: inset 0px -68px 7px 0px rgba(2,82,129,0.7)
                     box-shadow: inset 0px -68px 7px 0px rgba(2,82,129,0.7)
 
-#about-us-section
-    padding-top: 157px
-    background: url('../img/about-us-bg.png') center top no-repeat
-    background-size: 100%
-    .title-section
-        font-family: 'Cambria'
-        font-size: 58px
-        font-weight: 400
-        color: #fff
-        margin-top: 20px
-        text-transform: uppercase
-        margin-bottom: 40px
-    .head-info
-        margin-bottom: 40px
-    .info
-        margin-bottom: 40px
-        .title
-            h3
-                font-family: "Cambria"
-                font-weight: 400
-                color: #fff
-                text-transform: uppercase
-                font-size: 28px
-        .add-text
-            p
-                font-family: "Cambria"
-                font-size: 22px
-                color: #fff
-        .blacked
-            color: #000 !important
-    .block-images
-        margin-bottom: 40px
-    .slider-item
-        margin: 30px 0
-        .pr
-            height: 130px
-            align-items: center
-        .slider-image, h5
-            margin-bottom: 30px
-        h5, span
-            text-align: center
-        h5
-            font-family: "Cambria"
-            font-size: 26px
-        span
-            font-family: "Cambria"
-            font-size: 22px
-    .slick-slide
-        &:focus
-            outline: none
-            box-shadow: none
-    #slider-btn
-        display: flex
-        justify-content: center
-        margin-top: 50px
-        margin-bottom: 100px
-        .slick-prev, .slick-next
-            position: relative
-            &::before
-                color: #ba2f2f
-#footer-second
-    .title-footer
-        font-family: 'Cambria'
-        color: #000
-        font-weight: 400
-        font-size: 38px
-        margin-bottom: 25px
-    .map-embed
-        width: 100%
-        height: 100%
-    .no-pad
-        padding: 0
-    form
-        margin-bottom: 40px
-        .form-group
-            margin-bottom: 7px
-            width: 100%
-            input
-                border-radius: 0
-                padding-top: 22px
-                padding-bottom: 22px
-            textarea
-                border-radius: 0
-                resize: none
-                height: 99px
-        .sbmt-btn-footer
-            margin-bottom: 35px
-            background-color: #ff0000
-            color: #fff
-            font-family: 'Cambria'
-            font-size: 30px
-            font-weight: 400
-            border: none
-            padding: 3px 28px
-            margin-top: 30px
-            &:hover
-                text-decoration: none
-    .other-info
-        background: url('../img/footer-bg.png') center center no-repeat
-        background-size: 101%
-        padding: 40px 0
-        span
-            font-family: $myriad
-            color: #ffffff
 
-    .footer-link
-        color: #fff
-        &:hover
-            text-decoration: none
-        i
-            color: red
-    .footer-name-comp
-        margin-bottom: 26px
-    
-    .pad
-        padding: 5px 0
 
 #catalog-section
     background-image: url('../img/catalogprod.png')

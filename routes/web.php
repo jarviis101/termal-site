@@ -12,9 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('{page}/{subs?}', ['uses' => 'PageController@index'])
-    ->where(['page' => '^(((?=(?!admin))(?=(?!\/)).))*$', 'subs' => '.*']);
+//Route::get('{page}/{subs?}', ['uses' => 'PageController@index'])
+//    ->where(['page' => '^(((?=(?!admin))(?=(?!\/)).))*$', 'subs' => '.*']);
+//
+//Route::get('{page}/{subs?}', ['uses' => 'PageController@services'])
+//    ->where(['page' => '^(((?=(?!admin))(?=(?!\/)).))*$', 'subs' => '.*']);
 
-//Route::get('/', function () {
-//    return view('index');
-//});
+Route::get('/', 'PageController@index');
+Route::get('/services', 'PageController@services');
+Route::get('/about', 'PageController@about');
+Route::get('/contacts', 'PageController@contacts');
+
+

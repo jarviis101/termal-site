@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\NewsRequest;
+use App\Http\Requests\ServiceRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class NewsCrudController
+ * Class ServiceCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class NewsCrudController extends CrudController
+class ServiceCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -26,9 +26,9 @@ class NewsCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\News::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/news');
-        CRUD::setEntityNameStrings('новость', 'новости');
+        CRUD::setModel(\App\Models\Service::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/service');
+        CRUD::setEntityNameStrings('услугу', 'услуги');
     }
 
     /**
@@ -39,8 +39,9 @@ class NewsCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('name')->type('text')->label('Название');
-        CRUD::column('slug')->type('text');
+        // CRUD::setFromDb(); // columns
+
+        CRUD::column('title')->type('text')->label('Название');
         CRUD::column('image')->type('image')->label('Изображение');
         CRUD::column('content')->type('markdown')->label('Содержание');
         /**
@@ -58,13 +59,13 @@ class NewsCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(NewsRequest::class);
+        CRUD::setValidation(ServiceRequest::class);
 
-        CRUD::field('name')->type('text')->label('Название');
-        CRUD::field('slug')->type('hidden');
+        // CRUD::setFromDb(); // fields
+
+        CRUD::field('title')->type('text')->label('Название');
         CRUD::field('image')->type('image')->upload(true)->label('Изображение');
         CRUD::field('content')->type('wysiwyg')->label('Содержание');
-
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');
