@@ -84,18 +84,19 @@
                         <h3 class="title-text blacked">
                             Обратная связь
                         </h3>
-                        <form action="/" method="POST" class="row form-contact">
+                        <form action="/contact" method="POST" class="row form-contact">
+                            @csrf
                             <div class="form-group col-xl-6">
-                                <input type="text" class="form-control" placeholder="Имя">
+                                <input type="text" name="name" class="form-control" placeholder="Имя">
                             </div>
                             <div class="form-group col-xl-6">
-                                <input type="text" class="form-control" placeholder="Электронная почта">
+                                <input type="email" name="mail" class="form-control" placeholder="Электронная почта">
                             </div>
                             <div class="form-group col-xl-6">
-                                <input type="text" class="form-control" placeholder="Телефонный номер">
+                                <input type="tel" name="number" class="form-control" placeholder="Телефонный номер">
                             </div>
                             <div class="form-group col-xl-6">
-                                <input type="text" class="form-control" placeholder="Тема">
+                                <input type="text" name="theme" class="form-control" placeholder="Тема">
                             </div>
                             <div class="form-group col-xl-12">
                                 <textarea class="form-control" name="message" placeholder="Сообщение"></textarea>

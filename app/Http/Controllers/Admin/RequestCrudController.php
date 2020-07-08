@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\CategoryRequest;
+use App\Http\Requests\RequestRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class CategoryCrudController
+ * Class RequestCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class CategoryCrudController extends CrudController
+class RequestCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -26,9 +26,9 @@ class CategoryCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Category::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/category');
-        CRUD::setEntityNameStrings('категорию', 'категории');
+        CRUD::setModel(\App\Models\Request::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/request');
+        CRUD::setEntityNameStrings('запрос', 'запросы');
     }
 
     /**
@@ -39,12 +39,13 @@ class CategoryCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        // CRUD::setFromDb(); // columns
+        CRUD::setFromDb(); // columns
 
-        CRUD::column('name')->type('text')->label('Название категории');
-        CRUD::column('slug')->type('text')->label('ЧПУ (slug)');
-        CRUD::column('image')->type('image')->label('Изображение');
-        CRUD::column('seo_text')->type('text')->label('SEO текст');
+        CRUD::column('name')->type('text')->label('Имя клиента');
+        CRUD::column('email')->type('text')->label('E-mail клиента');
+        CRUD::column('message')->label('Сообщение');
+        CRUD::column('number')->type('text')->label('Номер');
+        CRUD::column('theme')->type('text')->label('Тема сообщения');
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -60,14 +61,15 @@ class CategoryCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(CategoryRequest::class);
+        CRUD::setValidation(RequestRequest::class);
 
-        // CRUD::setFromDb(); // fields
+        CRUD::field('name')->type('text')->label('Имя клиента');
+        CRUD::field('email')->type('text')->label('E-mail клиента');
+        CRUD::field('message')->type('wysiwyg')->label('Сообщение');
+        CRUD::field('number')->type('text')->label('Номер');
+        CRUD::field('theme')->type('text')->label('Тема сообщения');
 
-        CRUD::field('name')->type('text')->label('Название категории');
-        CRUD::field('slug')->type('hidden');
-        CRUD::field('image')->type('image')->upload(true)->label('Изображение');
-        CRUD::field('seo_text')->type('wysiwyg')->label('SEO текст');
+
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');

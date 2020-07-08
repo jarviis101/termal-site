@@ -12,10 +12,10 @@
         <div class="contact">
             <div class="row">
                 <div>
-                    <a class="col-xl-6" href="mailto:office@____________.com.ua">office@____________.com.ua</a>
+                    <a class="col-xl-6" href="mailto:{{ Setting::get('contact_email') }}">{{ Setting::get('contact_email') }}</a>
                 </div>
                 <div>
-                    <a class="col-xl-6" href="tel:+38 067 572 50 73">+38 067 572 50 73</a>
+                    <a class="col-xl-6" href="tel:{{ Setting::get('contact_number') }}">{{ Setting::get('contact_number') }}</a>
                 </div>
             </div>
         </div>
@@ -34,13 +34,13 @@
                 <a class="nav-link" href="/services">Каталог услуг</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/#">Каталог продукции</a>
+                <a class="nav-link" href="/product_list">Каталог продукции</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/#">Наши проекты</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/#">Инфо</a>
+                <a class="nav-link" href="/info">Инфо</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/contacts">Наши контакты</a>
@@ -60,13 +60,13 @@
         <a href="/services">Каталог услуг</a>
     </li>
     <li>
-        <a href="/#">Каталог продукции</a>
+        <a href="/product_list">Каталог продукции</a>
     </li>
     <li>
         <a href="/#">Наши проекты</a>
     </li>
     <li>
-        <a href="/#">Инфо</a>
+        <a href="/info">Инфо</a>
     </li>
     <li>
         <a href="/contacts">Наши контакты</a>

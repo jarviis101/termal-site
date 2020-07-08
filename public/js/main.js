@@ -22,6 +22,20 @@ $(document).ready(function(){
         slidesToScroll: 1,
         prevArrow: $('#first-prev'),
         nextArrow: $('#first-next'),
+        responsive: [
+            {
+              breakpoint: 1199,
+              settings: {
+                slidesToShow: 2,
+              }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: 1,
+                }
+            }
+          ]
     });
 
     $('.second-row-partners').slick({
@@ -30,22 +44,62 @@ $(document).ready(function(){
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
+        responsive: [
+            {
+              breakpoint: 1199,
+              settings: {
+                slidesToShow: 2,
+              }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: 1,
+                }
+            }
+          ]
     });
 
     $('.first-row-cert').slick({
-        infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
         prevArrow: $('#first-prev-cert'),
         nextArrow: $('#first-next-cert'),
+        responsive: [
+            {
+              breakpoint: 1199,
+              settings: {
+                slidesToShow: 2,
+              }
+            },
+            {
+                breakpoint: 991,
+                settings: {
+                  slidesToShow: 1,
+                }
+            }
+          ]
     });
     
     $('.second-row-cert').slick({
         prevArrow: '#second-prev-cert',
         nextArrow: '#second-next-cert',
-        infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
+        responsive: [
+            {
+              breakpoint: 1199,
+              settings: {
+                slidesToShow: 2,
+              }
+            },
+            {
+                breakpoint: 991,
+                settings: {
+                  slidesToShow: 1,
+                }
+            }
+          ]
     });
 
     $('.slider-advantages').slick({

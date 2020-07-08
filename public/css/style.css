@@ -854,22 +854,52 @@ nav.navbar {
 }
 
 #info-section, #catalog-section {
-  padding-top: 157px;
+  padding-top: 119px;
   background: url("../img/info-bg.png") center top no-repeat;
   background-size: 100%;
 }
+@media screen and (max-width: 1199px) {
+  #info-section, #catalog-section {
+    background-size: 130%;
+    padding-top: 30px;
+  }
+}
+@media screen and (max-width: 991px) {
+  #info-section, #catalog-section {
+    background-size: 179%;
+  }
+}
+@media screen and (max-width: 575px) {
+  #info-section, #catalog-section {
+    background-size: 205%;
+  }
+}
 #info-section .title-info-section, #catalog-section .title-info-section {
   font-family: "Cambria";
-  font-size: 58px;
+  font-size: 2.85rem;
   font-weight: 400;
   color: #fff;
   margin-top: 20px;
   margin-bottom: 20px;
   text-transform: uppercase;
 }
+@media screen and (max-width: 991px) {
+  #info-section .title-info-section, #catalog-section .title-info-section {
+    font-size: 1.85rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  #info-section .title-info-section, #catalog-section .title-info-section {
+    font-size: 2.85rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  #info-section .title-info-section, #catalog-section .title-info-section {
+    font-size: 1.5rem;
+  }
+}
 #info-section #v-pills-tab, #catalog-section #v-pills-tab {
   background-color: #ffffff;
-  padding: 20px 0;
   height: fit-content;
 }
 #info-section .nav-pills .nav-link, #catalog-section .nav-pills .nav-link {
@@ -882,15 +912,41 @@ nav.navbar {
 #info-section .title-menu, #catalog-section .title-menu {
   text-transform: uppercase;
   font-weight: 400;
-  font-size: 22px;
+  font-size: 1.5rem;
   font-family: "Cambria";
   padding-left: 60px;
 }
+@media screen and (max-width: 991px) {
+  #info-section .title-menu, #catalog-section .title-menu {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 991px) {
+  #info-section .center, #catalog-section .center {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 767px) {
+  #info-section .center-sm, #catalog-section .center-sm {
+    justify-content: center !important;
+  }
+}
+#info-section .current-row-2, #catalog-section .current-row-2 {
+  flex-direction: column;
+  background: #fff;
+  height: fit-content;
+  padding: 20px 0;
+}
 #info-section .title-in-tab, #catalog-section .title-in-tab {
   color: #ffffff;
-  font-size: 22px;
+  font-size: 1.5rem;
   font-family: "Cambria";
   margin-bottom: 20px;
+}
+@media screen and (max-width: 991px) {
+  #info-section .title-in-tab, #catalog-section .title-in-tab {
+    margin-top: 40px;
+  }
 }
 #info-section .first-row-partners, #info-section .second-row-partners, #info-section .first-row-cert, #info-section .second-row-cert, #info-section .first-row-products, #catalog-section .first-row-partners, #catalog-section .second-row-partners, #catalog-section .first-row-cert, #catalog-section .second-row-cert, #catalog-section .first-row-products {
   margin-bottom: 60px;
@@ -905,6 +961,11 @@ nav.navbar {
   flex-direction: row;
   height: 110px;
 }
+@media screen and (max-width: 575px) {
+  #info-section .first-row-partners .logo-block, #info-section .second-row-partners .logo-block, #info-section .first-row-cert .logo-block, #info-section .second-row-cert .logo-block, #info-section .first-row-products .logo-block, #catalog-section .first-row-partners .logo-block, #catalog-section .second-row-partners .logo-block, #catalog-section .first-row-cert .logo-block, #catalog-section .second-row-cert .logo-block, #catalog-section .first-row-products .logo-block {
+    height: 90px;
+  }
+}
 #info-section .first-row-partners .logo-block img, #info-section .second-row-partners .logo-block img, #info-section .first-row-cert .logo-block img, #info-section .second-row-cert .logo-block img, #info-section .first-row-products .logo-block img, #catalog-section .first-row-partners .logo-block img, #catalog-section .second-row-partners .logo-block img, #catalog-section .first-row-cert .logo-block img, #catalog-section .second-row-cert .logo-block img, #catalog-section .first-row-products .logo-block img {
   height: inherit;
 }
@@ -913,6 +974,11 @@ nav.navbar {
   justify-content: center;
   margin-top: 50px;
   margin-bottom: 100px;
+}
+@media screen and (max-width: 768px) {
+  #info-section .first-btn-row, #info-section .second-btn-row, #catalog-section .first-btn-row, #catalog-section .second-btn-row {
+    display: none;
+  }
 }
 #info-section .first-btn-row .slick-prev, #info-section .first-btn-row .slick-next, #info-section .second-btn-row .slick-prev, #info-section .second-btn-row .slick-next, #catalog-section .first-btn-row .slick-prev, #catalog-section .first-btn-row .slick-next, #catalog-section .second-btn-row .slick-prev, #catalog-section .second-btn-row .slick-next {
   position: relative;
@@ -930,11 +996,21 @@ nav.navbar {
   flex-direction: column;
   margin-left: 200px;
 }
+@media screen and (max-width: 1199px) {
+  #info-section .news-container .news-item, #info-section .news-container .video-item, #info-section .news-container .vacancy-item, #info-section .video-container .news-item, #info-section .video-container .video-item, #info-section .video-container .vacancy-item, #info-section .vacancy-container .news-item, #info-section .vacancy-container .video-item, #info-section .vacancy-container .vacancy-item, #catalog-section .news-container .news-item, #catalog-section .news-container .video-item, #catalog-section .news-container .vacancy-item, #catalog-section .video-container .news-item, #catalog-section .video-container .video-item, #catalog-section .video-container .vacancy-item, #catalog-section .vacancy-container .news-item, #catalog-section .vacancy-container .video-item, #catalog-section .vacancy-container .vacancy-item {
+    margin: 0;
+  }
+}
 #info-section .news-container .news-item .img-block, #info-section .news-container .video-item .img-block, #info-section .news-container .vacancy-item .img-block, #info-section .video-container .news-item .img-block, #info-section .video-container .video-item .img-block, #info-section .video-container .vacancy-item .img-block, #info-section .vacancy-container .news-item .img-block, #info-section .vacancy-container .video-item .img-block, #info-section .vacancy-container .vacancy-item .img-block, #catalog-section .news-container .news-item .img-block, #catalog-section .news-container .video-item .img-block, #catalog-section .news-container .vacancy-item .img-block, #catalog-section .video-container .news-item .img-block, #catalog-section .video-container .video-item .img-block, #catalog-section .video-container .vacancy-item .img-block, #catalog-section .vacancy-container .news-item .img-block, #catalog-section .vacancy-container .video-item .img-block, #catalog-section .vacancy-container .vacancy-item .img-block {
   height: 560px;
   display: flex;
   align-items: center;
   margin-bottom: 30px;
+}
+@media screen and (max-width: 575px) {
+  #info-section .news-container .news-item .img-block, #info-section .news-container .video-item .img-block, #info-section .news-container .vacancy-item .img-block, #info-section .video-container .news-item .img-block, #info-section .video-container .video-item .img-block, #info-section .video-container .vacancy-item .img-block, #info-section .vacancy-container .news-item .img-block, #info-section .vacancy-container .video-item .img-block, #info-section .vacancy-container .vacancy-item .img-block, #catalog-section .news-container .news-item .img-block, #catalog-section .news-container .video-item .img-block, #catalog-section .news-container .vacancy-item .img-block, #catalog-section .video-container .news-item .img-block, #catalog-section .video-container .video-item .img-block, #catalog-section .video-container .vacancy-item .img-block, #catalog-section .vacancy-container .news-item .img-block, #catalog-section .vacancy-container .video-item .img-block, #catalog-section .vacancy-container .vacancy-item .img-block {
+    height: inherit;
+  }
 }
 #info-section .news-container .news-item .img-block img, #info-section .news-container .video-item .img-block img, #info-section .news-container .vacancy-item .img-block img, #info-section .video-container .news-item .img-block img, #info-section .video-container .video-item .img-block img, #info-section .video-container .vacancy-item .img-block img, #info-section .vacancy-container .news-item .img-block img, #info-section .vacancy-container .video-item .img-block img, #info-section .vacancy-container .vacancy-item .img-block img, #catalog-section .news-container .news-item .img-block img, #catalog-section .news-container .video-item .img-block img, #catalog-section .news-container .vacancy-item .img-block img, #catalog-section .video-container .news-item .img-block img, #catalog-section .video-container .video-item .img-block img, #catalog-section .video-container .vacancy-item .img-block img, #catalog-section .vacancy-container .news-item .img-block img, #catalog-section .vacancy-container .video-item .img-block img, #catalog-section .vacancy-container .vacancy-item .img-block img {
   width: 100%;
@@ -942,14 +1018,24 @@ nav.navbar {
 }
 #info-section .news-container .news-item .title-news, #info-section .news-container .news-item .video-title, #info-section .news-container .news-item .vacancy-title, #info-section .news-container .video-item .title-news, #info-section .news-container .video-item .video-title, #info-section .news-container .video-item .vacancy-title, #info-section .news-container .vacancy-item .title-news, #info-section .news-container .vacancy-item .video-title, #info-section .news-container .vacancy-item .vacancy-title, #info-section .video-container .news-item .title-news, #info-section .video-container .news-item .video-title, #info-section .video-container .news-item .vacancy-title, #info-section .video-container .video-item .title-news, #info-section .video-container .video-item .video-title, #info-section .video-container .video-item .vacancy-title, #info-section .video-container .vacancy-item .title-news, #info-section .video-container .vacancy-item .video-title, #info-section .video-container .vacancy-item .vacancy-title, #info-section .vacancy-container .news-item .title-news, #info-section .vacancy-container .news-item .video-title, #info-section .vacancy-container .news-item .vacancy-title, #info-section .vacancy-container .video-item .title-news, #info-section .vacancy-container .video-item .video-title, #info-section .vacancy-container .video-item .vacancy-title, #info-section .vacancy-container .vacancy-item .title-news, #info-section .vacancy-container .vacancy-item .video-title, #info-section .vacancy-container .vacancy-item .vacancy-title, #catalog-section .news-container .news-item .title-news, #catalog-section .news-container .news-item .video-title, #catalog-section .news-container .news-item .vacancy-title, #catalog-section .news-container .video-item .title-news, #catalog-section .news-container .video-item .video-title, #catalog-section .news-container .video-item .vacancy-title, #catalog-section .news-container .vacancy-item .title-news, #catalog-section .news-container .vacancy-item .video-title, #catalog-section .news-container .vacancy-item .vacancy-title, #catalog-section .video-container .news-item .title-news, #catalog-section .video-container .news-item .video-title, #catalog-section .video-container .news-item .vacancy-title, #catalog-section .video-container .video-item .title-news, #catalog-section .video-container .video-item .video-title, #catalog-section .video-container .video-item .vacancy-title, #catalog-section .video-container .vacancy-item .title-news, #catalog-section .video-container .vacancy-item .video-title, #catalog-section .video-container .vacancy-item .vacancy-title, #catalog-section .vacancy-container .news-item .title-news, #catalog-section .vacancy-container .news-item .video-title, #catalog-section .vacancy-container .news-item .vacancy-title, #catalog-section .vacancy-container .video-item .title-news, #catalog-section .vacancy-container .video-item .video-title, #catalog-section .vacancy-container .video-item .vacancy-title, #catalog-section .vacancy-container .vacancy-item .title-news, #catalog-section .vacancy-container .vacancy-item .video-title, #catalog-section .vacancy-container .vacancy-item .vacancy-title {
   font-weight: 400;
-  font-size: 22px;
+  font-size: 1.3rem;
   font-family: "Cambria";
   margin-bottom: 30px;
+}
+@media screen and (max-width: 575px) {
+  #info-section .news-container .news-item .title-news, #info-section .news-container .news-item .video-title, #info-section .news-container .news-item .vacancy-title, #info-section .news-container .video-item .title-news, #info-section .news-container .video-item .video-title, #info-section .news-container .video-item .vacancy-title, #info-section .news-container .vacancy-item .title-news, #info-section .news-container .vacancy-item .video-title, #info-section .news-container .vacancy-item .vacancy-title, #info-section .video-container .news-item .title-news, #info-section .video-container .news-item .video-title, #info-section .video-container .news-item .vacancy-title, #info-section .video-container .video-item .title-news, #info-section .video-container .video-item .video-title, #info-section .video-container .video-item .vacancy-title, #info-section .video-container .vacancy-item .title-news, #info-section .video-container .vacancy-item .video-title, #info-section .video-container .vacancy-item .vacancy-title, #info-section .vacancy-container .news-item .title-news, #info-section .vacancy-container .news-item .video-title, #info-section .vacancy-container .news-item .vacancy-title, #info-section .vacancy-container .video-item .title-news, #info-section .vacancy-container .video-item .video-title, #info-section .vacancy-container .video-item .vacancy-title, #info-section .vacancy-container .vacancy-item .title-news, #info-section .vacancy-container .vacancy-item .video-title, #info-section .vacancy-container .vacancy-item .vacancy-title, #catalog-section .news-container .news-item .title-news, #catalog-section .news-container .news-item .video-title, #catalog-section .news-container .news-item .vacancy-title, #catalog-section .news-container .video-item .title-news, #catalog-section .news-container .video-item .video-title, #catalog-section .news-container .video-item .vacancy-title, #catalog-section .news-container .vacancy-item .title-news, #catalog-section .news-container .vacancy-item .video-title, #catalog-section .news-container .vacancy-item .vacancy-title, #catalog-section .video-container .news-item .title-news, #catalog-section .video-container .news-item .video-title, #catalog-section .video-container .news-item .vacancy-title, #catalog-section .video-container .video-item .title-news, #catalog-section .video-container .video-item .video-title, #catalog-section .video-container .video-item .vacancy-title, #catalog-section .video-container .vacancy-item .title-news, #catalog-section .video-container .vacancy-item .video-title, #catalog-section .video-container .vacancy-item .vacancy-title, #catalog-section .vacancy-container .news-item .title-news, #catalog-section .vacancy-container .news-item .video-title, #catalog-section .vacancy-container .news-item .vacancy-title, #catalog-section .vacancy-container .video-item .title-news, #catalog-section .vacancy-container .video-item .video-title, #catalog-section .vacancy-container .video-item .vacancy-title, #catalog-section .vacancy-container .vacancy-item .title-news, #catalog-section .vacancy-container .vacancy-item .video-title, #catalog-section .vacancy-container .vacancy-item .vacancy-title {
+    font-size: 1rem;
+  }
 }
 #info-section .news-container .news-item .text-news, #info-section .news-container .news-item .video-text, #info-section .news-container .news-item .vacancy-text, #info-section .news-container .video-item .text-news, #info-section .news-container .video-item .video-text, #info-section .news-container .video-item .vacancy-text, #info-section .news-container .vacancy-item .text-news, #info-section .news-container .vacancy-item .video-text, #info-section .news-container .vacancy-item .vacancy-text, #info-section .video-container .news-item .text-news, #info-section .video-container .news-item .video-text, #info-section .video-container .news-item .vacancy-text, #info-section .video-container .video-item .text-news, #info-section .video-container .video-item .video-text, #info-section .video-container .video-item .vacancy-text, #info-section .video-container .vacancy-item .text-news, #info-section .video-container .vacancy-item .video-text, #info-section .video-container .vacancy-item .vacancy-text, #info-section .vacancy-container .news-item .text-news, #info-section .vacancy-container .news-item .video-text, #info-section .vacancy-container .news-item .vacancy-text, #info-section .vacancy-container .video-item .text-news, #info-section .vacancy-container .video-item .video-text, #info-section .vacancy-container .video-item .vacancy-text, #info-section .vacancy-container .vacancy-item .text-news, #info-section .vacancy-container .vacancy-item .video-text, #info-section .vacancy-container .vacancy-item .vacancy-text, #catalog-section .news-container .news-item .text-news, #catalog-section .news-container .news-item .video-text, #catalog-section .news-container .news-item .vacancy-text, #catalog-section .news-container .video-item .text-news, #catalog-section .news-container .video-item .video-text, #catalog-section .news-container .video-item .vacancy-text, #catalog-section .news-container .vacancy-item .text-news, #catalog-section .news-container .vacancy-item .video-text, #catalog-section .news-container .vacancy-item .vacancy-text, #catalog-section .video-container .news-item .text-news, #catalog-section .video-container .news-item .video-text, #catalog-section .video-container .news-item .vacancy-text, #catalog-section .video-container .video-item .text-news, #catalog-section .video-container .video-item .video-text, #catalog-section .video-container .video-item .vacancy-text, #catalog-section .video-container .vacancy-item .text-news, #catalog-section .video-container .vacancy-item .video-text, #catalog-section .video-container .vacancy-item .vacancy-text, #catalog-section .vacancy-container .news-item .text-news, #catalog-section .vacancy-container .news-item .video-text, #catalog-section .vacancy-container .news-item .vacancy-text, #catalog-section .vacancy-container .video-item .text-news, #catalog-section .vacancy-container .video-item .video-text, #catalog-section .vacancy-container .video-item .vacancy-text, #catalog-section .vacancy-container .vacancy-item .text-news, #catalog-section .vacancy-container .vacancy-item .video-text, #catalog-section .vacancy-container .vacancy-item .vacancy-text {
   color: #000000;
   font-family: "Cambria";
-  font-size: 22px;
+  font-size: 1.3rem;
+}
+@media screen and (max-width: 575px) {
+  #info-section .news-container .news-item .text-news, #info-section .news-container .news-item .video-text, #info-section .news-container .news-item .vacancy-text, #info-section .news-container .video-item .text-news, #info-section .news-container .video-item .video-text, #info-section .news-container .video-item .vacancy-text, #info-section .news-container .vacancy-item .text-news, #info-section .news-container .vacancy-item .video-text, #info-section .news-container .vacancy-item .vacancy-text, #info-section .video-container .news-item .text-news, #info-section .video-container .news-item .video-text, #info-section .video-container .news-item .vacancy-text, #info-section .video-container .video-item .text-news, #info-section .video-container .video-item .video-text, #info-section .video-container .video-item .vacancy-text, #info-section .video-container .vacancy-item .text-news, #info-section .video-container .vacancy-item .video-text, #info-section .video-container .vacancy-item .vacancy-text, #info-section .vacancy-container .news-item .text-news, #info-section .vacancy-container .news-item .video-text, #info-section .vacancy-container .news-item .vacancy-text, #info-section .vacancy-container .video-item .text-news, #info-section .vacancy-container .video-item .video-text, #info-section .vacancy-container .video-item .vacancy-text, #info-section .vacancy-container .vacancy-item .text-news, #info-section .vacancy-container .vacancy-item .video-text, #info-section .vacancy-container .vacancy-item .vacancy-text, #catalog-section .news-container .news-item .text-news, #catalog-section .news-container .news-item .video-text, #catalog-section .news-container .news-item .vacancy-text, #catalog-section .news-container .video-item .text-news, #catalog-section .news-container .video-item .video-text, #catalog-section .news-container .video-item .vacancy-text, #catalog-section .news-container .vacancy-item .text-news, #catalog-section .news-container .vacancy-item .video-text, #catalog-section .news-container .vacancy-item .vacancy-text, #catalog-section .video-container .news-item .text-news, #catalog-section .video-container .news-item .video-text, #catalog-section .video-container .news-item .vacancy-text, #catalog-section .video-container .video-item .text-news, #catalog-section .video-container .video-item .video-text, #catalog-section .video-container .video-item .vacancy-text, #catalog-section .video-container .vacancy-item .text-news, #catalog-section .video-container .vacancy-item .video-text, #catalog-section .video-container .vacancy-item .vacancy-text, #catalog-section .vacancy-container .news-item .text-news, #catalog-section .vacancy-container .news-item .video-text, #catalog-section .vacancy-container .news-item .vacancy-text, #catalog-section .vacancy-container .video-item .text-news, #catalog-section .vacancy-container .video-item .video-text, #catalog-section .vacancy-container .video-item .vacancy-text, #catalog-section .vacancy-container .vacancy-item .text-news, #catalog-section .vacancy-container .vacancy-item .video-text, #catalog-section .vacancy-container .vacancy-item .vacancy-text {
+    font-size: 1rem;
+  }
 }
 #info-section .news-container .news-item .to-news-btn, #info-section .news-container .video-item .to-news-btn, #info-section .news-container .vacancy-item .to-news-btn, #info-section .video-container .news-item .to-news-btn, #info-section .video-container .video-item .to-news-btn, #info-section .video-container .vacancy-item .to-news-btn, #info-section .vacancy-container .news-item .to-news-btn, #info-section .vacancy-container .video-item .to-news-btn, #info-section .vacancy-container .vacancy-item .to-news-btn, #catalog-section .news-container .news-item .to-news-btn, #catalog-section .news-container .video-item .to-news-btn, #catalog-section .news-container .vacancy-item .to-news-btn, #catalog-section .video-container .news-item .to-news-btn, #catalog-section .video-container .video-item .to-news-btn, #catalog-section .video-container .vacancy-item .to-news-btn, #catalog-section .vacancy-container .news-item .to-news-btn, #catalog-section .vacancy-container .video-item .to-news-btn, #catalog-section .vacancy-container .vacancy-item .to-news-btn {
   background-color: #ff0000;
@@ -981,27 +1067,88 @@ nav.navbar {
   flex-direction: row;
   height: 350px;
 }
+@media screen and (max-width: 575px) {
+  #info-section .first-row-cert .logo-block, #info-section .second-row-cert .logo-block, #catalog-section .first-row-cert .logo-block, #catalog-section .second-row-cert .logo-block {
+    height: 200px;
+  }
+}
+#info-section .nav-menu-goriz, #catalog-section .nav-menu-goriz {
+  flex-direction: column;
+}
+@media screen and (max-width: 992px) {
+  #info-section .nav-menu-goriz, #catalog-section .nav-menu-goriz {
+    justify-content: center;
+    flex-direction: row !important;
+  }
+}
+@media screen and (max-width: 575px) {
+  #info-section .nav-menu-goriz, #catalog-section .nav-menu-goriz {
+    justify-content: center;
+    flex-direction: column !important;
+  }
+}
+@media screen and (max-width: 992px) {
+  #info-section .current-row, #catalog-section .current-row {
+    flex-direction: column;
+  }
+}
 
 #prod-catalog-section {
-  padding-top: 157px;
+  padding-top: 119px;
   background: url("../img/catalogprod.png") center top no-repeat;
   background-size: 100%;
 }
+@media screen and (max-width: 1199px) {
+  #prod-catalog-section {
+    background-size: 130%;
+    padding-top: 30px;
+  }
+}
+@media screen and (max-width: 991px) {
+  #prod-catalog-section {
+    background-size: 179%;
+  }
+}
+@media screen and (max-width: 575px) {
+  #prod-catalog-section {
+    background-size: 470%;
+  }
+}
 #prod-catalog-section .title-section {
   font-family: "Cambria";
-  font-size: 58px;
+  font-size: 2.85rem;
   font-weight: 400;
   color: #fff;
   margin-top: 20px;
   text-transform: uppercase;
   margin-bottom: 40px;
 }
+@media screen and (max-width: 991px) {
+  #prod-catalog-section .title-section {
+    font-size: 1.85rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  #prod-catalog-section .title-section {
+    font-size: 2.85rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  #prod-catalog-section .title-section {
+    font-size: 1.5rem;
+  }
+}
 #prod-catalog-section .title-text {
   font-family: "Cambria";
   color: #fff;
   font-weight: 400;
-  font-size: 22px;
+  font-size: 1.3rem;
   margin-bottom: 120px;
+}
+@media screen and (max-width: 575px) {
+  #prod-catalog-section .title-text {
+    font-size: 1rem;
+  }
 }
 #prod-catalog-section .list-of-services .service-item {
   margin-bottom: 40px;
@@ -1011,6 +1158,36 @@ nav.navbar {
   position: relative;
   height: 320px;
   width: 100%;
+}
+@media screen and (max-width: 991px) {
+  #prod-catalog-section .list-of-services .service-item a {
+    height: 400px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #prod-catalog-section .list-of-services .service-item a {
+    height: 365px;
+  }
+}
+@media screen and (max-width: 575px) {
+  #prod-catalog-section .list-of-services .service-item a {
+    height: 365px;
+  }
+}
+@media screen and (max-width: 425px) {
+  #prod-catalog-section .list-of-services .service-item a {
+    height: 265px;
+  }
+}
+@media screen and (max-width: 375px) {
+  #prod-catalog-section .list-of-services .service-item a {
+    height: 250px;
+  }
+}
+@media screen and (max-width: 320px) {
+  #prod-catalog-section .list-of-services .service-item a {
+    height: 200px;
+  }
 }
 #prod-catalog-section .list-of-services .service-item a .img-block {
   position: absolute;
@@ -1035,12 +1212,22 @@ nav.navbar {
   font-family: "Cambria";
   color: #fff;
   font-weight: 400;
-  font-size: 26px;
+  font-size: 1.5rem;
   align-items: flex-end;
   padding-bottom: 20px;
   -webkit-box-shadow: inset 0px -68px 7px 0px rgba(2, 82, 129, 0.7);
   -moz-box-shadow: inset 0px -68px 7px 0px rgba(2, 82, 129, 0.7);
   box-shadow: inset 0px -68px 7px 0px rgba(2, 82, 129, 0.7);
+}
+@media screen and (max-width: 575px) {
+  #prod-catalog-section .list-of-services .service-item a span {
+    font-size: 1.3rem;
+  }
+}
+@media screen and (max-width: 375px) {
+  #prod-catalog-section .list-of-services .service-item a span {
+    font-size: 1.1rem;
+  }
 }
 
 #catalog-section {
@@ -1054,24 +1241,40 @@ nav.navbar {
 #catalog-section .title-tab h3, #catalog-section .title-tab span, #catalog-section .title-tab a {
   text-align: center;
 }
+@media screen and (max-width: 767px) {
+  #catalog-section .title-tab h3, #catalog-section .title-tab span, #catalog-section .title-tab a {
+    color: #000;
+  }
+}
 #catalog-section .title-tab .title-in-tab {
-  font-size: 28px;
+  font-size: 1.5rem;
 }
 #catalog-section .title-tab span, #catalog-section .title-tab a {
-  font-size: 22px;
+  font-size: 1.3rem;
   font-family: "Cambria";
   color: #fff;
   font-weight: 400;
+}
+@media screen and (max-width: 767px) {
+  #catalog-section .title-tab span, #catalog-section .title-tab a {
+    color: #000;
+  }
 }
 #catalog-section .title-tab span:hover, #catalog-section .title-tab a:hover {
   text-decoration: none;
 }
 #catalog-section #v-pills-tab {
-  margin-top: 70px;
+  margin-top: 0;
 }
 #catalog-section .first-container-products .first-row-products .product-item {
   margin-bottom: 30px;
   background: #fff;
+}
+@media screen and (max-width: 768px) {
+  #catalog-section .first-container-products .first-row-products .product-item {
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 #catalog-section .first-container-products .first-row-products .product-item .img-block {
   display: flex;
@@ -1079,6 +1282,11 @@ nav.navbar {
   width: 100%;
   justify-content: flex-start;
   align-items: flex-end;
+}
+@media screen and (max-width: 768px) {
+  #catalog-section .first-container-products .first-row-products .product-item .img-block {
+    justify-content: center;
+  }
 }
 #catalog-section .first-container-products .first-row-products .product-item .img-block img {
   height: fit-content;
@@ -1116,6 +1324,12 @@ nav.navbar {
 }
 #catalog-section .first-container-products .first-row-products .product-item .btn-order:hover {
   text-decoration: none;
+}
+@media screen and (max-width: 767px) {
+  #catalog-section .first-container-products .first-row-products .product-item .btn-order {
+    margin-right: 0;
+    margin-top: 20px;
+  }
 }
 #catalog-section .first-row-products {
   display: flex;

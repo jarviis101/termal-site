@@ -5,9 +5,12 @@
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('category') }}'><i class='nav-icon las la-list'></i> Категории</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('product') }}'><i class='nav-icon las la-shopping-basket'></i> Товары</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('service') }}'><i class='nav-icon lar la-handshake'></i> Услуги</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('request') }}'><i class='nav-icon las la-sms'></i> Обратная связь</a></li>
 <li class="nav-item nav-dropdown">
     <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon las la-info"></i> О компании</a>
     <ul class="nav-dropdown-items">
+        <li class='nav-item'><a class='nav-link' href='{{ backpack_url('partner') }}'><i class='nav-icon las la-user-friends'></i> Партнеры</a></li>
+        <li class='nav-item'><a class='nav-link' href='{{ backpack_url('video') }}'><i class='nav-icon lar la-file-video'></i> Видео</a></li>
         <li class='nav-item'><a class='nav-link' href='{{ backpack_url('advantage') }}'><i class='nav-icon las la-check-double'></i> Преимущества</a></li>
         <li class='nav-item'><a class='nav-link' href='{{ backpack_url('slide') }}'><i class='nav-icon lar la-copy'></i> Слайды</a></li>
         <li class='nav-item'><a class='nav-link' href='{{ backpack_url('image') }}'><i class='nav-icon lar la-images'></i> Галерея</a></li>
@@ -25,4 +28,3 @@
     </ul>
 </li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('setting') }}'><i class='nav-icon la la-cog'></i> <span>Настройки</span></a></li>
-

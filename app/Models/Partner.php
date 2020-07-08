@@ -4,14 +4,11 @@ namespace App\Models;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
-use Cviebrock\EloquentSluggable\Sluggable;
-
-use App\Models\Product;
 use Illuminate\Support\Str;
 
-class Category extends Model
+class Partner extends Model
 {
-    use CrudTrait, Sluggable;
+    use CrudTrait;
 
     /*
     |--------------------------------------------------------------------------
@@ -19,7 +16,7 @@ class Category extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'categories';
+    protected $table = 'partners';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
@@ -34,11 +31,11 @@ class Category extends Model
     */
     public function setImageAttribute($value)
     {
-        $attribute_name = "image";
+        $attribute_name = "logo";
         // or use your own disk, defined in config/filesystems.php
         $disk = config('backpack.base.root_disk_name');
         // destination path relative to the disk above
-        $destination_path = "public/uploads/categories";
+        $destination_path = "public/uploads/partners";
 
         // if the image was erased
         if ($value==null) {
@@ -72,23 +69,12 @@ class Category extends Model
             $this->attributes[$attribute_name] = $public_destination_path.'/'.$filename;
         }
     }
-
-    public function sluggable()
-    {
-        return [
-            'slug' => [
-                'source' => 'name'
-            ]
-        ];
-    }
     /*
     |--------------------------------------------------------------------------
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-    public function products(){
-        return $this->hasMany(Product::class);
-    }
+
     /*
     |--------------------------------------------------------------------------
     | SCOPES

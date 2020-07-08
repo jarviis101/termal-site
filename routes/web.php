@@ -22,5 +22,8 @@ Route::get('/', 'PageController@index');
 Route::get('/services', 'PageController@services');
 Route::get('/about', 'PageController@about');
 Route::get('/contacts', 'PageController@contacts');
+Route::get('/product_list', 'PageController@product_list');
+Route::get('/product_catalog', 'PageController@product_catalog');
+Route::get('/info', 'PageController@info');
 
-
+Route::post('/contact', 'ContactController@contact');
