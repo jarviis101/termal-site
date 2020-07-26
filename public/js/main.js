@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
     $('.slider-section').slick({
         // autoplay: true,
@@ -12,9 +13,54 @@ $(document).ready(function(){
           ]
     });
 
+    $('.row-projects').slick({
+      infinite: true,
+      slidesToShow: 7,
+      slidesToScroll: 1,
+      prevArrow: $('#first-prev'),
+      nextArrow: $('#first-next'),
+      responsive: [
+          {
+            breakpoint: 1441,
+            settings: {
+              slidesToShow: 6,
+            }
+          },
+          {
+              breakpoint: 1369,
+              settings: {
+                slidesToShow: 5,
+              }
+          },
+          {
+            breakpoint: 1025,
+            settings: {
+              slidesToShow: 4,
+            }
+          },
+          {
+            breakpoint: 992,
+            draggable: true,
+            settings: {
+              slidesToShow: 3,
+            }
+          },
+          {
+            breakpoint: 575,
+            settings: {
+              slidesToShow: 2,
+            }
+          },
+          {
+            breakpoint: 424,
+            settings: {
+              slidesToShow: 1,
+            }
+          }
+        ]
+    });
 
-
-    lightGallery(document.getElementById('index-lightgallery')); 
+  lightGallery(document.getElementById('index-lightgallery')); 
 
     $('.first-row-partners').slick({
         infinite: true,
@@ -139,13 +185,5 @@ $(document).ready(function(){
             }
         ]
     });
-
-    // $('.first-row-products').slick({
-    //     slidesToShow: 2,
-    //     slidesToScroll: 2,
-    //     slidesPerRow: 4,
-    //     rows: 2,
-    //     prevArrow: '#products-prev',
-    //     nextArrow: '#products-next'
-    // });
+    $('#projects-section .slick-track').addClass("nav nav-pills")
 });

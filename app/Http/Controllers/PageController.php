@@ -24,6 +24,9 @@ use App\Models\Partner;
 
 use App\Models\Product;
 
+use App\Models\Type;
+use App\Models\Project;
+
 class PageController extends Controller
 {
     public static function get_all_pages()
@@ -114,5 +117,20 @@ class PageController extends Controller
         return view('product_catalog')->with('data', $page)
             ->with('categories', $categories)
             ->with('products', $products);
+    }
+
+    public function our_projects(){
+        $page = Page::findBySlug('projects');
+        $types = Type::all();
+        $projects = Project::all();
+
+        if (!$page)
+        {
+            abort(404, 'Please go back to our <a href="'.url('').'">homepage</a>.');
+        }
+
+        return view('projects')->with('data', $page)
+            ->with('types', $types)
+            ->with('projects', $projects);
     }
 }

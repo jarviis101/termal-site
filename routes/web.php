@@ -25,5 +25,6 @@ Route::get('/contacts', 'PageController@contacts');
 Route::get('/product_list', 'PageController@product_list');
 Route::get('/product_catalog', 'PageController@product_catalog');
 Route::get('/info', 'PageController@info');
+Route::get('/projects', 'PageController@our_projects');
 
 Route::post('/contact', 'ContactController@contact');

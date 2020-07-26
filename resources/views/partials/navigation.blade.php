@@ -37,7 +37,7 @@
                 <a class="nav-link" href="/product_list">Каталог продукции</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/#">Наши проекты</a>
+                <a class="nav-link" href="/projects">Наши проекты</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/info">Инфо</a>
@@ -63,7 +63,7 @@
         <a href="/product_list">Каталог продукции</a>
     </li>
     <li>
-        <a href="/#">Наши проекты</a>
+        <a href="/projects">Наши проекты</a>
     </li>
     <li>
         <a href="/info">Инфо</a>
