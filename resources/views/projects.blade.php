@@ -36,7 +36,7 @@
                                             <div class="img-block">
                                                 <img src="{{asset($type->image)}}" alt="">
                                             </div>
-                                            <span>{{$type->title}}</span>
+                                            <span>{{$type['title_'.$locale]}}</span>
                                         </div>
                                     </a>
                                 @else
@@ -45,7 +45,7 @@
                                             <div class="img-block">
                                                 <img src="{{asset($type->image)}}" alt="">
                                             </div>
-                                            <span>{{$type->title}}</span>
+                                            <span>{{$type['title_'.$locale]}}</span>
                                         </div>
                                     </a>
                                 @endif
@@ -65,7 +65,7 @@
                                     @if($loop->index == 0)
                                         <div id="{{$type->slug}}" class="tab-pane active" role="tabpanel">
                                             <div class="d-flex justify-content-center">
-                                                <h4 class="title-tabs">{{$type->title}}</h4>
+                                                <h4 class="title-tabs">{{$type['title_'.$locale]}}</h4>
                                             </div>
                                             <div class="row">
                                                 @if(!empty($projects))
@@ -78,10 +78,10 @@
                                                                             <img src="{{asset($project->image)}}" alt="">
                                                                         </div>
                                                                     </div>
-                                                                    <h4 class="d-flex">{{$project->name}}</h4>
+                                                                    <h4 class="d-flex">{{$project['name_'.$locale]}}</h4>
                                                                     <div class="d-flex">
                                                                         <p>
-                                                                            {!! $project->description !!}
+                                                                            {!! $project['description_'.$locale] !!}
                                                                         </p>
                                                                     </div>
                                                                 </div>
@@ -94,7 +94,7 @@
                                     @else
                                         <div id="{{$type->slug}}" class="tab-pane" role="tabpanel">
                                             <div class="d-flex justify-content-center">
-                                                <h4 class="title-tabs">{{$type->title}}</h4>
+                                                <h4 class="title-tabs">{{$type['title_'.$locale]}}</h4>
                                             </div>
                                             <div class="row">
                                                 @if(!empty($projects))
@@ -107,10 +107,10 @@
                                                                             <img src="{{asset($project->image)}}" alt="">
                                                                         </div>
                                                                     </div>
-                                                                    <h4 class="d-flex">{{$project->name}}</h4>
+                                                                    <h4 class="d-flex">{{$project['name_'.$locale]}}</h4>
                                                                     <div class="d-flex">
                                                                         <p>
-                                                                            {!! $project->description !!}
+                                                                            {!! $project['description_'.$locale] !!}
                                                                         </p>
                                                                     </div>
                                                                 </div>

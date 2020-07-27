@@ -9,14 +9,7 @@
         <li class='nav-item'><a class='nav-link' href='{{ backpack_url('image') }}'><i class='nav-icon lar la-images'></i> Галерея</a></li>
     </ul>
 </li>
-<li class="nav-item nav-dropdown">
-    <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon las la-compass"></i> Услуги</a>
-    <ul class="nav-dropdown-items">
-        <li class='nav-item'><a class='nav-link' href='{{ backpack_url('service') }}'><i class='nav-icon lar la-handshake'></i> Услуги</a></li>
-        <li class='nav-item'><a class='nav-link' href='{{ backpack_url('slide') }}'><i class='nav-icon lar la-copy'></i> Слайды</a></li>
-        <li class='nav-item'><a class='nav-link' href='{{ backpack_url('image') }}'><i class='nav-icon lar la-images'></i> Галерея</a></li>
-    </ul>
-</li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('service') }}'><i class='nav-icon lar la-handshake'></i> Услуги</a></li>
 <li class="nav-item nav-dropdown">
     <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon las la-wallet"></i> Продукция</a>
     <ul class="nav-dropdown-items">

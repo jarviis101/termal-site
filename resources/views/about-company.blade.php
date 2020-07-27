@@ -55,10 +55,10 @@
                                                 <img src="{{asset($advantage->icon)}}" class="slider-image" alt="">
                                             </div>
                                             <div class="d-flex justify-content-center">
-                                                <h5>{{$advantage->title}}%</h5>
+                                                <h5>{{$advantage['title_'.$locale]}}%</h5>
                                             </div>
                                             <div class="d-flex justify-content-center">
-                                                <span>{{$advantage->description}}</span>
+                                                <span>{{$advantage['description_'].$locale}}</span>
                                             </div>
                                         </div>
                                     </div>

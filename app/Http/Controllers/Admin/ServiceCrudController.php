@@ -41,9 +41,9 @@ class ServiceCrudController extends CrudController
     {
         // CRUD::setFromDb(); // columns
 
-        CRUD::column('title')->type('text')->label('Название');
+        CRUD::column('title_ru')->type('text')->label('Название');
         CRUD::column('image')->type('image')->label('Изображение');
-        CRUD::column('content')->type('markdown')->label('Содержание');
+        CRUD::column('content_ru')->type('markdown')->label('Содержание');
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -63,9 +63,20 @@ class ServiceCrudController extends CrudController
 
         // CRUD::setFromDb(); // fields
 
-        CRUD::field('title')->type('text')->label('Название');
+        CRUD::field('title_ru')->type('text')->label('Название (RU)')->wrapperAttributes([
+            'class' => 'form-group col-md-4'
+        ]);
+        CRUD::field('title_ua')->type('text')->label('Название (UA)')->wrapperAttributes([
+            'class' => 'form-group col-md-4'
+        ]);
+        CRUD::field('title_en')->type('text')->label('Название (EN)')->wrapperAttributes([
+            'class' => 'form-group col-md-4'
+        ]);
+
         CRUD::field('image')->type('image')->upload(true)->label('Изображение');
-        CRUD::field('content')->type('wysiwyg')->label('Содержание');
+        CRUD::field('content_ru')->type('wysiwyg')->label('Содержание (RU)');
+        CRUD::field('content_ua')->type('wysiwyg')->label('Содержание (UA)');
+        CRUD::field('content_en')->type('wysiwyg')->label('Содержание (EN)');
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');

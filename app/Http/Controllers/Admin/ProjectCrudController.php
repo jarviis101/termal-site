@@ -39,10 +39,9 @@ class ProjectCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('name')->type('text')->label('Название');
+        CRUD::column('name_ru')->type('text')->label('Название');
         CRUD::column('image')->type('image')->label('Изображение');
         CRUD::column('type_id')->type('select')->label('Отрасль')->model('App\Models\Type')->name('type_id')->entity('type');
-        CRUD::column('description')->type('markdown')->label('Описание');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -61,11 +60,21 @@ class ProjectCrudController extends CrudController
     {
         CRUD::setValidation(ProjectRequest::class);
 
-        CRUD::field('name')->type('text')->label('Название');
+        CRUD::field('name_ru')->type('text')->label('Название (RU)')->wrapperAttributes([
+            'class' => 'form-group col-md-4'
+        ]);
+        CRUD::field('name_ua')->type('text')->label('Название (UA)')->wrapperAttributes([
+            'class' => 'form-group col-md-4'
+        ]);
+        CRUD::field('name_en')->type('text')->label('Название (EN)')->wrapperAttributes([
+            'class' => 'form-group col-md-4'
+        ]);
         CRUD::field('slug')->type('hidden');
         CRUD::field('image')->type('image')->upload(true)->label('Изображение');
-        CRUD::field('description')->type('wysiwyg')->label('Описание');
-        CRUD::field('type_id')->label('Отрасль')->type('select2')->name('type_id')->entity('type')->attribute('name')->model('App\Models\Type');
+        CRUD::field('description_ru')->type('wysiwyg')->label('Содержание (RU)');
+        CRUD::field('description_ua')->type('wysiwyg')->label('Содержание (UA)');
+        CRUD::field('description_en')->type('wysiwyg')->label('Содержание (EN)');
+        CRUD::field('type_id')->label('Отрасль')->type('select2')->name('type_id')->entity('type')->attribute('title')->model('App\Models\Type');
 
 
         /**

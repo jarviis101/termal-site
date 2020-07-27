@@ -39,9 +39,9 @@ class VideoCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('title')->type('text')->label('Название');
+        CRUD::column('title_ru')->type('text')->label('Название');
         CRUD::column('link')->type('text')->label('Ссылка');
-        CRUD::column('description')->type('markdown')->label('Описание');
+        CRUD::column('description_ru')->type('markdown')->label('Описание');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -60,9 +60,19 @@ class VideoCrudController extends CrudController
     {
         CRUD::setValidation(VideoRequest::class);
 
-        CRUD::field('title')->type('text')->label('Название');
+        CRUD::field('title_ru')->type('text')->label('Название (RU)')->wrapperAttributes([
+            'class' => 'form-group col-md-4'
+        ]);
+        CRUD::field('title_ua')->type('text')->label('Название (UA)')->wrapperAttributes([
+            'class' => 'form-group col-md-4'
+        ]);
+        CRUD::field('title_en')->type('text')->label('Название (EN)')->wrapperAttributes([
+            'class' => 'form-group col-md-4'
+        ]);
         CRUD::field('link')->type('text')->label('Ссылка');
-        CRUD::field('description')->type('wysiwyg')->label('Описание');
+        CRUD::field('description_ru')->type('wysiwyg')->label('Содержание (RU)');
+        CRUD::field('description_ua')->type('wysiwyg')->label('Содержание (UA)');
+        CRUD::field('description_en')->type('wysiwyg')->label('Содержание (EN)');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

@@ -41,7 +41,7 @@ class SlideCrudController extends CrudController
     {
         // CRUD::setFromDb(); // columns
 
-        CRUD::column('title')->type('text')->label('Заглавие');
+        CRUD::column('title_ru')->type('text')->label('Заглавие');
         CRUD::column('link')->type('text')->label('Ссылка');
         CRUD::column('image')->type('image')->label('Изображение');
         /**
@@ -63,7 +63,15 @@ class SlideCrudController extends CrudController
 
         // CRUD::setFromDb(); // fields
 
-        CRUD::field('title')->type('text')->label('Название');
+        CRUD::field('title_ru')->type('text')->label('Название (RU)')->wrapperAttributes([
+            'class' => 'form-group col-md-4'
+        ]);
+        CRUD::field('title_ua')->type('text')->label('Название (UA)')->wrapperAttributes([
+            'class' => 'form-group col-md-4'
+        ]);
+        CRUD::field('title_en')->type('text')->label('Название (EN)')->wrapperAttributes([
+            'class' => 'form-group col-md-4'
+        ]);
         CRUD::field('link')->type('text')->label('Ссылка');
         CRUD::field('image')->type('image')->upload(true)->label('Изображение');
 

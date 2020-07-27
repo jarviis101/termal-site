@@ -19,11 +19,13 @@
                     <div class="d-flex">
                         <div class="d-flex justify-content-center">
                             <span>
-                                {{ $slide->title }}
+                                {{ $slide['title_'.$locale] }}
                             </span>
                         </div>
                         <div class="row">
-                            <a href="{{ $slide->link }}" class="btn-learn-more">Learn more</a>
+                            @if($slide->link)
+                                <a href="{{ $slide->link }}" class="btn-learn-more">Learn more</a>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -59,8 +61,8 @@
             <div id="index-lightgallery">
                 @if(!empty($images))
                     @foreach($images as $image)
-                        <a href="{{asset($slide->image)}}" class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 image-block">
-                            <img src="{{asset($slide->image)}}" />
+                        <a href="{{asset($image->image)}}" class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 image-block">
+                            <img src="{{asset($image->image)}}" alt="{{$image['title_'.$locale]}}" />
                         </a>
                     @endforeach
                 @endif

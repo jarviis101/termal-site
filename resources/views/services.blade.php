@@ -58,10 +58,10 @@
                                         <div class="col-md-12 col-lg-6 col-xl-6">
                                             <div class="row justify-content-center info-block">
                                                 <h3 class="col-12">
-                                                    {{$service->title}}
+                                                    {{$service['title_'.$locale]}}
                                                 </h3>
                                                 <div class="col-12">
-                                                    {!! $service->content !!}
+                                                    {!! $service['content_'.$locale] !!}
                                                 </div>
                                             </div>
                                         </div>
@@ -78,10 +78,10 @@
                                         <div class="col-md-12 col-lg-6 col-xl-6">
                                             <div class="row justify-content-center info-block">
                                                 <h3 class="col-12">
-                                                    {{$service->title}}
+                                                    {{$service['title_'.$locale]}}
                                                 </h3>
                                                 <div class="col-12">
-                                                    {!! $service->content !!}
+                                                    {!! $service['content_'.$locale] !!}
                                                 </div>
                                             </div>
                                         </div>

@@ -28,9 +28,9 @@
                     @if(!empty($categories))
                         @foreach($categories as $category)
                             @if($loop->index == 0)
-                                <a class="nav-link active" data-toggle="pill" href="#{{$category->slug}}" role="tab" data-toggle="tab" aria-selected="true">{{$category->name}}</a>
+                                <a class="nav-link active" data-toggle="pill" href="#{{$category->slug}}" role="tab" data-toggle="tab" aria-selected="true">{{$category['name_'.$locale]}}</a>
                             @else
-                                <a class="nav-link" data-toggle="pill" href="#{{$category->slug}}" role="tab" data-toggle="tab" aria-selected="true">{{$category->name}}</a>
+                                <a class="nav-link" data-toggle="pill" href="#{{$category->slug}}" role="tab" data-toggle="tab" aria-selected="true">{{$category['name_'.$locale]}}</a>
                             @endif
                         @endforeach
                     @endif
@@ -43,7 +43,7 @@
                             <div class="tab-pane fade show active" id="{{$category->slug}}" role="tabpanel">
                                 <div class="d-flex justify-content-center title-tab">
                                     <h3 class="title-in-tab">
-                                        {{$category->name}}
+                                        {{$category['name_'.$locale]}}
                                     </h3>
                                     <span>Съемная теплоизоляция Термочехол - это производство термочехлов от компании ЛайфБуд.</span>
                                     <a href="/">https://www.termochehol.com/</a>
@@ -62,7 +62,7 @@
                                                         </div>
                                                         <div class="col-xl-6">
                                                             <div class="row center-sm">
-                                                                <span class="name">{{$product->name}}</span>
+                                                                <span class="name">{{$product['name_'.$locale]}}</span>
                                                             </div>
                                                             <div class="row center-sm">
                                                                 <span class="price">{{$product->price}} грн.</span>
@@ -80,22 +80,8 @@
                                             @endforeach
                                         @endif
                                     </div>
-                        <!-- <nav class="d-flex justify-content-center">
-                            <ul class="pagination">
-                              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                              <li class="page-item"><a class="page-link" href="#">1</a></li>
-                              <li class="page-item"><a class="page-link" href="#">2</a></li>
-                              <li class="page-item"><a class="page-link" href="#">3</a></li>
-                              <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                            </ul>
-                        </nav> -->
-
-                        <!-- <div class="products-btn-row">
-                            <button class="slick-prev slick-arrow" id="products-prev">Previous</button>
-                            <button class="slick-next slick-arrow" id="products-next">Next</button>
-                        </div> -->
-                    </div>
-                </div>
+                                </div>
+                            </div>
                         @else
                             <div class="tab-pane fade" id="{{$category->slug}}" role="tabpanel">
                                 <div class="d-flex justify-content-center title-tab">
@@ -119,7 +105,7 @@
                                                             </div>
                                                             <div class="col-xl-6">
                                                                 <div class="row center-sm">
-                                                                    <span class="name">{{$product->name}}</span>
+                                                                    <span class="name">{{$product['name_'.$locale]}}</span>
                                                                 </div>
                                                                 <div class="row center-sm">
                                                                     <span class="price">{{$product->price}} грн.</span>

@@ -40,7 +40,7 @@ class PartnerCrudController extends CrudController
     protected function setupListOperation()
     {
         CRUD::setFromDb(); // columns
-        CRUD::column('name')->type('text')->label('Название');
+        CRUD::column('name_ru')->type('text')->label('Название');
         CRUD::column('logo')->type('image')->label('Логотип');
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -59,7 +59,15 @@ class PartnerCrudController extends CrudController
     {
         CRUD::setValidation(PartnerRequest::class);
 
-        CRUD::field('name')->type('text')->label('Название');
+        CRUD::field('name_ru')->type('text')->label('Название (RU)')->wrapperAttributes([
+            'class' => 'form-group col-md-4'
+        ]);
+        CRUD::field('name_ua')->type('text')->label('Название (UA)')->wrapperAttributes([
+            'class' => 'form-group col-md-4'
+        ]);
+        CRUD::field('name_en')->type('text')->label('Название (EN)')->wrapperAttributes([
+            'class' => 'form-group col-md-4'
+        ]);
         CRUD::field('logo')->type('image')->upload(true)->label('Логотип');
 
         /**

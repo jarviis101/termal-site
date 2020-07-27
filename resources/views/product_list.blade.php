@@ -31,43 +31,10 @@
                                 <div class="img-block">
                                     <img src="{{asset($category->image)}}" alt="">
                                 </div>
-                                <span>{{$category->name}}</span>
+                                <span>{{$category['name_'.$locale]}}</span>
                             </a>
                         </div>
                     @endforeach
-
-{{--                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 service-item">--}}
-{{--                        <a href="#">--}}
-{{--                            <div class="img-block">--}}
-{{--                                <img src="./img/service2.png" alt="">--}}
-{{--                            </div>--}}
-{{--                            <span>Теплоизоляционные материалы</span>--}}
-{{--                        </a>--}}
-{{--                    </div>--}}
-{{--                    <div class="col-xl-6 service-item">--}}
-{{--                        <a href="#">--}}
-{{--                            <div class="img-block">--}}
-{{--                                <img src="./img/service3.png" alt="">--}}
-{{--                            </div>--}}
-{{--                            <span>Воздуховоды систем вентиляции и аспирации</span>--}}
-{{--                        </a>--}}
-{{--                    </div>--}}
-{{--                    <div class="col-xl-6 service-item">--}}
-{{--                        <a href="#">--}}
-{{--                            <div class="img-block">--}}
-{{--                                <img src="./img/service4.png" alt="">--}}
-{{--                            </div>--}}
-{{--                            <span>Огнеупорные материалы</span>--}}
-{{--                        </a>--}}
-{{--                    </div>--}}
-{{--                    <div class="col-xl-6 service-item">--}}
-{{--                        <a href="#">--}}
-{{--                            <div class="img-block">--}}
-{{--                                <img src="./img/service5.png" alt="">--}}
-{{--                            </div>--}}
-{{--                            <span>Крепежные материалы</span>--}}
-{{--                        </a>--}}
-{{--                    </div>--}}
                 </div>
             </div>
         </div>

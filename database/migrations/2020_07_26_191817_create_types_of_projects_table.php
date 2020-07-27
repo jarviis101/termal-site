@@ -14,6 +14,9 @@ class CreateTypesOfProjectsTable extends Migration
     {
         Schema::create('types_of_projects', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title_ru');
+            $table->string('title_ua');
+            $table->string('title_en');
             $table->string('title');
             $table->string('slug');
             $table->string('image');

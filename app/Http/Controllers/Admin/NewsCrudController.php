@@ -39,10 +39,10 @@ class NewsCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('name')->type('text')->label('Название');
+        CRUD::column('name_ru')->type('text')->label('Название');
         CRUD::column('slug')->type('text');
         CRUD::column('image')->type('image')->label('Изображение');
-        CRUD::column('content')->type('markdown')->label('Содержание');
+        CRUD::column('content_ru')->type('markdown')->label('Содержание');
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -60,10 +60,20 @@ class NewsCrudController extends CrudController
     {
         CRUD::setValidation(NewsRequest::class);
 
-        CRUD::field('name')->type('text')->label('Название');
+        CRUD::field('name_ru')->type('text')->label('Название (RU)')->wrapperAttributes([
+            'class' => 'form-group col-md-4'
+        ]);
+        CRUD::field('name_ua')->type('text')->label('Название (UA)')->wrapperAttributes([
+            'class' => 'form-group col-md-4'
+        ]);
+        CRUD::field('name_en')->type('text')->label('Название (EN)')->wrapperAttributes([
+            'class' => 'form-group col-md-4'
+        ]);
         CRUD::field('slug')->type('hidden');
         CRUD::field('image')->type('image')->upload(true)->label('Изображение');
-        CRUD::field('content')->type('wysiwyg')->label('Содержание');
+        CRUD::field('content_ru')->type('wysiwyg')->label('Содержание (RU)');
+        CRUD::field('content_ua')->type('wysiwyg')->label('Содержание (UA)');
+        CRUD::field('content_en')->type('wysiwyg')->label('Содержание (EN)');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

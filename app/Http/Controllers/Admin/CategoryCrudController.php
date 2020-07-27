@@ -41,10 +41,10 @@ class CategoryCrudController extends CrudController
     {
         // CRUD::setFromDb(); // columns
 
-        CRUD::column('name')->type('text')->label('Название категории');
+        CRUD::column('name_ru')->type('text')->label('Название категории');
         CRUD::column('slug')->type('text')->label('ЧПУ (slug)');
         CRUD::column('image')->type('image')->label('Изображение');
-        CRUD::column('seo_text')->type('text')->label('SEO текст');
+        CRUD::column('seo_text_ru')->type('text')->label('SEO текст');
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -64,10 +64,23 @@ class CategoryCrudController extends CrudController
 
         // CRUD::setFromDb(); // fields
 
-        CRUD::field('name')->type('text')->label('Название категории');
+        // CRUD::field('name')->type('text')->label('Название категории');
+        CRUD::field('name_ru')->type('text')->label('Название (RU)')->wrapperAttributes([
+            'class' => 'form-group col-md-4'
+        ]);
+        CRUD::field('name_ua')->type('text')->label('Название (UA)')->wrapperAttributes([
+            'class' => 'form-group col-md-4'
+        ]);
+        CRUD::field('name_en')->type('text')->label('Название (EN)')->wrapperAttributes([
+            'class' => 'form-group col-md-4'
+        ]);
+
         CRUD::field('slug')->type('hidden');
         CRUD::field('image')->type('image')->upload(true)->label('Изображение');
-        CRUD::field('seo_text')->type('wysiwyg')->label('SEO текст');
+
+        CRUD::field('seo_text_ru')->type('wysiwyg')->label('SEO текст (RU)');
+        CRUD::field('seo_text_ua')->type('wysiwyg')->label('SEO текст (UA)');
+        CRUD::field('seo_text_en')->type('wysiwyg')->label('SEO текст (EN)');
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');

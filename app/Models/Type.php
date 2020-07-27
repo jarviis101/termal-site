@@ -75,7 +75,7 @@ class Type extends Model
     {
         return [
             'slug' => [
-                'source' => 'title'
+                'source' => 'title_ru'
             ]
         ];
     }

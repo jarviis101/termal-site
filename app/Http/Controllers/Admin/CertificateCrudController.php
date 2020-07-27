@@ -41,7 +41,7 @@ class CertificateCrudController extends CrudController
     {
         // CRUD::setFromDb(); // columns
 
-        CRUD::column('title')->type('text')->label('Название');
+        CRUD::column('title_ru')->type('text')->label('Название');
         CRUD::column('image')->type('image')->label('Изображение');
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -62,7 +62,15 @@ class CertificateCrudController extends CrudController
 
         // CRUD::setFromDb(); // fields
 
-        CRUD::field('name')->type('text')->label('Название');
+        CRUD::field('title_ru')->type('text')->label('Название (RU)')->wrapperAttributes([
+            'class' => 'form-group col-md-4'
+        ]);
+        CRUD::field('title_ua')->type('text')->label('Название (UA)')->wrapperAttributes([
+            'class' => 'form-group col-md-4'
+        ]);
+        CRUD::field('title_en')->type('text')->label('Название (EN)')->wrapperAttributes([
+            'class' => 'form-group col-md-4'
+        ]);
         CRUD::field('image')->type('image')->upload(true)->label('Изображение');
 
         /**

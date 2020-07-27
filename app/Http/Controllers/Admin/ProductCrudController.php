@@ -41,11 +41,11 @@ class ProductCrudController extends CrudController
     {
         // CRUD::setFromDb(); // columns
 
-        CRUD::column('name')->type('text')->label('Название');
+        CRUD::column('name_ru')->type('text')->label('Название');
         CRUD::column('price')->type('text')->label('Цена');
         CRUD::column('image')->type('image')->label('Изображение');
         CRUD::column('category_id')->type('select')->label('Категория')->model('App\Models\Category')->name('category_id')->entity('category');
-        CRUD::column('description')->type('markdown')->label('Описание');
+        CRUD::column('description_ru')->type('markdown')->label('Описание');
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -65,12 +65,22 @@ class ProductCrudController extends CrudController
 
         // CRUD::setFromDb(); // fields
 
-        CRUD::field('name')->type('text')->label('Название');
+        CRUD::field('name_ru')->type('text')->label('Название (RU)')->wrapperAttributes([
+            'class' => 'form-group col-md-4'
+        ]);
+        CRUD::field('name_ua')->type('text')->label('Название (UA)')->wrapperAttributes([
+            'class' => 'form-group col-md-4'
+        ]);
+        CRUD::field('name_en')->type('text')->label('Название (EN)')->wrapperAttributes([
+            'class' => 'form-group col-md-4'
+        ]);
         CRUD::field('price')->type('text')->label('Цена');
         CRUD::field('slug')->type('hidden');
         CRUD::field('image')->type('image')->upload(true)->label('Изображение');
-        CRUD::field('description')->type('wysiwyg')->label('Содержание');
-        CRUD::field('category_id')->label('Категория')->type('select2')->name('category_id')->entity('category')->attribute('name')->model('App\Models\Category');
+        CRUD::field('description_ru')->type('wysiwyg')->label('Содержание (RU)');
+        CRUD::field('description_ua')->type('wysiwyg')->label('Содержание (UA)');
+        CRUD::field('description_en')->type('wysiwyg')->label('Содержание (EN)');
+        CRUD::field('category_id')->label('Категория')->type('select2')->name('category_id')->entity('category')->attribute('name_ru')->model('App\Models\Category');
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');

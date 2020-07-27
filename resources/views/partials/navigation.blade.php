@@ -1,6 +1,6 @@
-@php
-    $pages = \App\Http\Controllers\PageController::get_all_pages();
-@endphp
+{{--@php--}}
+{{--    $pages = \App\Http\Controllers\PageController::get_all_pages();--}}
+{{--@endphp--}}
 <nav class="navbar navbar-expand-lg navbar-light" id="nav-md">
     <a class="navbar-brand" href="{{ route('index', app()->getLocale()) }}">
         <img src="{{asset('/img/LOGO.png')}}" alt="">

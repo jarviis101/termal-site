@@ -92,10 +92,10 @@
                                     <img src="{{asset($item->image)}}" alt="">
                                 </a>
                                 <h4 class="title-news">
-                                    {{$item->name}}
+                                    {{$item['name_'.$locale]}}
                                 </h4>
                                 <div class="text-news">
-                                    {!! $item->content !!}
+                                    {!! $item['content_'].$locale !!}
                                 </div>
                                 <a class="nav-link to-news-btn" href="/news/{{$item->slug}}">Подробнее</a>
                             </div>
@@ -115,7 +115,7 @@
                                 @foreach($certificates as $certificate)
                                     <div>
                                         <div class="logo-block">
-                                            <img src="{{asset($certificate->image)}}" alt="{{$certificate->title}}">
+                                            <img src="{{asset($certificate->image)}}" alt="{{$certificate['title_'.$locale]}}">
                                         </div>
                                     </div>
                                 @endforeach
@@ -179,10 +179,10 @@
                                 <div class="video-item col-xl-8">
                                     {!! Embed::make($video->link)->parseUrl()->getIframe() !!}
                                     <h4 class="video-title">
-                                        {{$video->title}}
+                                        {{$video['title_'.$locale]}}
                                     </h4>
                                     <div class="video-text">
-                                        {!! $video->description !!}
+                                        {!! $video['description_'.$locale] !!}
                                     </div>
                                 </div>
                             @endforeach
@@ -203,10 +203,10 @@
                                         <img src="{{asset($vacancy->image)}}" alt="">
                                     </div>
                                     <h4 class="vacancy-title">
-                                        {{$vacancy->name}}
+                                        {{$vacancy['name_'.$locale]}}
                                     </h4>
                                     <div class="vacancy-text">
-                                        {{$vacancy->description}}
+                                        {{$vacancy['description_'.$locale]}}
                                     </div>
                                     {{--form here--}}
                                     <a class="nav-link to-news-btn" href="/">Отправить резюме</a>

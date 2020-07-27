@@ -39,7 +39,7 @@ class TypeCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('title')->type('text')->label('Название');
+        CRUD::column('title_ru')->type('text')->label('Название');
         CRUD::column('slug')->type('text')->label('ЧПУ (slug)');
         CRUD::column('image')->type('image')->label('Изображение');
 
@@ -60,7 +60,15 @@ class TypeCrudController extends CrudController
     {
         CRUD::setValidation(TypeRequest::class);
 
-        CRUD::field('title')->type('text')->label('Название категории');
+        CRUD::field('title_ru')->type('text')->label('Название (RU)')->wrapperAttributes([
+            'class' => 'form-group col-md-4'
+        ]);
+        CRUD::field('title_ua')->type('text')->label('Название (UA)')->wrapperAttributes([
+            'class' => 'form-group col-md-4'
+        ]);
+        CRUD::field('title_en')->type('text')->label('Название (EN)')->wrapperAttributes([
+            'class' => 'form-group col-md-4'
+        ]);
         CRUD::field('slug')->type('hidden');
         CRUD::field('image')->type('image')->upload(true)->label('Изображение');
 
