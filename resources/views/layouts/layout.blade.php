@@ -28,7 +28,7 @@
 
     @yield('content')
 
-    @if(Request::path() == 'about')
+    @if(route('about', app()->getLocale()))
         @include('partials.footer_2')
     @else
         @include('partials.footer')

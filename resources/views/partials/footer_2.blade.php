@@ -16,40 +16,93 @@
                         <div class="col-lg-12 col-xl-6">
                             <div class="row current-row">
                                 <div class="form-group">
-                                    <input type="text" name="name" class="col-12 form-control" placeholder="Name">
+                                    @if($locale == 'ru')
+                                        <input type="email" name="mail" class="col-12 form-control" placeholder="E-mail">
+                                    @elseif($locale == 'ua')
+                                        <input type="email" name="mail" class="col-12 form-control" placeholder="E-mail">
+                                    @elseif($locale == 'en')
+                                        <input type="email" name="mail" class="col-12 form-control" placeholder="E-mail">
+                                    @endif
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" name="mail" class="col-12 form-control" placeholder="Email">
+                                    @if($locale == 'ru')
+                                        <input type="email" name="mail" class="col-12 form-control" placeholder="E-mail">
+                                    @elseif($locale == 'ua')
+                                        <input type="email" name="mail" class="col-12 form-control" placeholder="E-mail">
+                                    @elseif($locale == 'en')
+                                        <input type="email" name="mail" class="col-12 form-control" placeholder="E-mail">
+                                    @endif
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-12 col-xl-6">
                             <div class="form-group">
-                                <textarea class="form-control" name="message" placeholder="Massage"></textarea>
+                                @if($locale == 'ru')
+                                    <textarea class="form-control" name="message" placeholder="Сообщение"></textarea>
+                                @elseif($locale == 'ua')
+                                    <textarea class="form-control" name="message" placeholder="Повідомлення"></textarea>
+                                @elseif($locale == 'en')
+                                    <textarea class="form-control" name="message" placeholder="Message"></textarea>
+                                @endif
                             </div>
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <input type="submit" class="sbmt-btn-footer" value="Send">
+                        @if($locale == 'ru')
+                            <input type="submit" class="sbmt-btn-footer" value="Отправить">
+                        @elseif($locale == 'ua')
+                            <input type="submit" class="sbmt-btn-footer" value="Надіслати">
+                        @elseif($locale == 'en')
+                            <input type="submit" class="sbmt-btn-footer" value="Send">
+                        @endif
                     </div>
                 </form>
             </div>
             <div class="row other-info">
                 <div class="col-lg-12 col-xl-6">
                     <div class="d-flex">
-                        <span class="footer-name-comp">
-                            {{ Setting::get('adderss') }}
-                        </span>
+                        @if($locale == 'ru')
+                            <span class="footer-name-comp">
+                                {{ Setting::get('name') }}
+                            </span>
+                        @elseif($locale == 'ua')
+                            <span class="footer-name-comp">
+                                {{ Setting::get('name') }}
+                            </span>
+                        @elseif($locale == 'en')
+                            <span class="footer-name-comp">
+                                {{ Setting::get('name') }}
+                            </span>
+                        @endif
                     </div>
                     <div class="d-flex schedule-text">
-                        <span>
-                            Графік роботи:
-                        </span>
+                        @if($locale == 'ru')
+                            <span>
+                                График работы:
+                            </span>
+                        @elseif($locale == 'ua')
+                            <span>
+                                Графік роботи:
+                            </span>
+                        @elseif($locale == 'en')
+                            <span>
+                                Schedule:
+                            </span>
+                        @endif
                     </div>
                     <div class="d-flex">
-                        <span>
-                            {{ Setting::get('schedule') }}
-                        </span>
+                        @if($locale == 'ru')
+                            <span>
+                                {{ Setting::get('schedule') }}
+                            </span>
+                        @elseif($locale == 'ua')
+                            <span>
+                                {{ Setting::get('schedule') }}
+                            </span>
+                        @elseif($locale == 'en')
+                            <span>
+                                Mon-Fri: 8:30 am - 5:00 pm
+                        @endif
                     </div>
                 </div>
 
@@ -70,7 +123,13 @@
                         <div class="col-xl-12 pad">
                             <a class="footer-link" href="https://www.google.com/maps?ll=50.018055,36.192511&z=16&t=m&hl=en&gl=UA&mapclient=embed&q=Velyka+Panasivska+St,+183+Kharkiv+Kharkivs%27ka+oblast+61000">
                                 <i class="fas fa-map-marker-alt"></i>
-                                {{ Setting::get('address') }}
+                                @if($locale == 'ru')
+                                    61040, г. Харьков, ул.Большая Панасовская, 183
+                                @elseif($locale == 'ua')
+                                    {{ Setting::get('address') }}
+                                @elseif($locale == 'en')
+                                    61040, M. Kharkiv, Velika Panasivska St., 183
+                                @endif
                             </a>
                         </div>
                     </div>

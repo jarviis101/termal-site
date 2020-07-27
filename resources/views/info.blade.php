@@ -18,19 +18,43 @@
                     <h3 class="title-menu">{{$data['title_'.$locale]}}</h3>
                 </div>
                 <div class="nav flex-column nav-pills col-md-12 col-lg-2 col-xl-2 nav-menu-goriz" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link active" data-toggle="pill" href="#partners" role="tab" aria-selected="true">Партнеры</a>
-                    <a class="nav-link"  data-toggle="pill" href="#news" role="tab" aria-selected="false">Новости</a>
-                    <a class="nav-link" data-toggle="pill" href="#certificates" role="tab" aria-selected="false">Сертфикаты и лицензии</a>
-                    <a class="nav-link" data-toggle="pill" href="#videos" role="tab" aria-selected="false">Видео</a>
-                    <a class="nav-link" data-toggle="pill" href="#vacancy" role="tab" aria-selected="false">Вакансии</a>
+                    @if($locale == 'ru')
+                        <a class="nav-link active" data-toggle="pill" href="#partners" role="tab" aria-selected="true">Партнеры</a>
+                        <a class="nav-link"  data-toggle="pill" href="#news" role="tab" aria-selected="false">Новости</a>
+                        <a class="nav-link" data-toggle="pill" href="#certificates" role="tab" aria-selected="false">Сертфикаты и лицензии</a>
+                        <a class="nav-link" data-toggle="pill" href="#videos" role="tab" aria-selected="false">Видео</a>
+                        <a class="nav-link" data-toggle="pill" href="#vacancy" role="tab" aria-selected="false">Вакансии</a>
+                    @elseif($locale == 'ua')
+                        <a class="nav-link active" data-toggle="pill" href="#partners" role="tab" aria-selected="true">Партнери</a>
+                        <a class="nav-link"  data-toggle="pill" href="#news" role="tab" aria-selected="false">Новини</a>
+                        <a class="nav-link" data-toggle="pill" href="#certificates" role="tab" aria-selected="false">Сертифікати і ліцензії</a>
+                        <a class="nav-link" data-toggle="pill" href="#videos" role="tab" aria-selected="false">Відео</a>
+                        <a class="nav-link" data-toggle="pill" href="#vacancy" role="tab" aria-selected="false">Вакансії</a>
+                    @elseif($locale == 'en')
+                        <a class="nav-link active" data-toggle="pill" href="#partners" role="tab" aria-selected="true">Partners</a>
+                        <a class="nav-link"  data-toggle="pill" href="#news" role="tab" aria-selected="false">News</a>
+                        <a class="nav-link" data-toggle="pill" href="#certificates" role="tab" aria-selected="false">Certificates and licenses</a>
+                        <a class="nav-link" data-toggle="pill" href="#videos" role="tab" aria-selected="false">Videos</a>
+                        <a class="nav-link" data-toggle="pill" href="#vacancy" role="tab" aria-selected="false">Vacancies</a>
+                    @endif
                 </div>
             </div>
             <div class="tab-content col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10" id="v-pills-tabContent">
                 <div class="tab-pane fade show active" id="partners" role="tabpanel">
                     <div class="d-flex justify-content-center">
-                        <h3 class="title-in-tab">
-                            Партнеры
-                        </h3>
+                        @if($locale == 'ru')
+                            <h3 class="title-in-tab">
+                                Партнеры
+                            </h3>
+                        @elseif($locale == 'ua')
+                            <h3 class="title-in-tab">
+                                Партнери
+                            </h3>
+                        @elseif($locale == 'en')
+                            <h3 class="title-in-tab">
+                                Partners
+                            </h3>
+                        @endif
                     </div>
                     <div class="first-container-partners">
                         <div class="first-row-partners">
@@ -80,9 +104,19 @@
                 </div>
                 <div class="tab-pane fade" id="news" role="tabpanel">
                     <div class="d-flex justify-content-center">
-                        <h3 class="title-in-tab">
-                            Новости
-                        </h3>
+                        @if($locale == 'ru')
+                            <h3 class="title-in-tab">
+                                Новости
+                            </h3>
+                        @elseif($locale == 'ua')
+                            <h3 class="title-in-tab">
+                                Новини
+                            </h3>
+                        @elseif($locale == 'en')
+                            <h3 class="title-in-tab">
+                                News
+                            </h3>
+                        @endif
                     </div>
                     <div class="news-container">
                         @if(!empty($news))
@@ -97,7 +131,13 @@
                                 <div class="text-news">
                                     {!! $item['content_'].$locale !!}
                                 </div>
-                                <a class="nav-link to-news-btn" href="/news/{{$item->slug}}">Подробнее</a>
+                                    @if($locale == 'ru')
+                                        <a class="nav-link to-news-btn" href="/news/{{$item->slug}}">Подробнее</a>
+                                    @elseif($locale == 'ua')
+                                        <a class="nav-link to-news-btn" href="/news/{{$item->slug}}">Детальніше</a>
+                                    @elseif($locale == 'en')
+                                        <a class="nav-link to-news-btn" href="/news/{{$item->slug}}">Learn more</a>
+                                    @endif
                             </div>
                             @endforeach
                         @endif
@@ -105,9 +145,19 @@
                 </div>
                 <div class="tab-pane fade" id="certificates" role="tabpanel">
                     <div class="d-flex justify-content-center">
-                        <h3 class="title-in-tab">
-                            Сертифекаты и лицензии
-                        </h3>
+                        @if($locale == 'ru')
+                            <h3 class="title-in-tab">
+                                Сертификаты и лицензии
+                            </h3>
+                        @elseif($locale == 'ua')
+                            <h3 class="title-in-tab">
+                                Сертифікати і ліцензії
+                            </h3>
+                        @elseif($locale == 'en')
+                            <h3 class="title-in-tab">
+                                Certificates and licenses
+                            </h3>
+                        @endif
                     </div>
                     <div class="first-container-partners">
                         <div class="first-row-cert">
@@ -158,9 +208,19 @@
                 </div>
                 <div class="tab-pane fade" id="videos" role="tabpanel">
                     <div class="d-flex justify-content-center">
-                        <h3 class="title-in-tab">
-                            Видео
-                        </h3>
+                        @if($locale == 'ru')
+                            <h3 class="title-in-tab">
+                                Видео
+                            </h3>
+                        @elseif($locale == 'ua')
+                            <h3 class="title-in-tab">
+                                Відео
+                            </h3>
+                        @elseif($locale == 'en')
+                            <h3 class="title-in-tab">
+                                Videos
+                            </h3>
+                        @endif
                     </div>
                     <div class="video-container">
                         <style>
@@ -191,9 +251,19 @@
                 </div>
                 <div class="tab-pane fade" id="vacancy" role="tabpanel">
                     <div class="d-flex justify-content-center">
-                        <h3 class="title-in-tab">
-                            Вакансии
-                        </h3>
+                        @if($locale == 'ru')
+                            <h3 class="title-in-tab">
+                                Вакансии
+                            </h3>
+                        @elseif($locale == 'ua')
+                            <h3 class="title-in-tab">
+                                Вакансії
+                            </h3>
+                        @elseif($locale == 'en')
+                            <h3 class="title-in-tab">
+                                Vacancies
+                            </h3>
+                        @endif
                     </div>
                     <div class="vacancy-container">
                         @if(!empty($vacancies))
@@ -209,7 +279,13 @@
                                         {{$vacancy['description_'.$locale]}}
                                     </div>
                                     {{--form here--}}
-                                    <a class="nav-link to-news-btn" href="/">Отправить резюме</a>
+                                    @if($locale == 'ru')
+                                        <a class="nav-link to-news-btn" href="/">Отправить резюме</a>
+                                    @elseif($locale == 'ua')
+                                        <a class="nav-link to-news-btn" href="/">Відправити резюме</a>
+                                    @elseif($locale == 'en')
+                                        <a class="nav-link to-news-btn" href="/">Send a resume</a>
+                                    @endif
                                 </div>
                             @endforeach
                         @endif

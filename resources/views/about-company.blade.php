@@ -44,7 +44,13 @@
                 <div class="d-flex middle-info">
                     <div class="col-xl-12 info">
                         <div class="row title justify-content-center">
-                            <h3 class="blacked">Наши преимущества в разработке</h3>
+                            @if($locale == 'ru')
+                                <h3 class="blacked">Наши преимущества в разработке</h3>
+                            @elseif($locale == 'ua')
+                                <h3 class="blacked">Наші переваги в розробці</h3>
+                            @elseif($locale == 'en')
+                                <h3 class="blacked">Our advantages in development</h3>
+                            @endif
                         </div>
                         <div class="slider-advantages">
                             @if(!empty($advantages))
@@ -58,64 +64,12 @@
                                                 <h5>{{$advantage['title_'.$locale]}}%</h5>
                                             </div>
                                             <div class="d-flex justify-content-center">
-                                                <span>{{$advantage['description_'].$locale}}</span>
+                                                <span>{!! $advantage['description_'].$locale !!}</span>
                                             </div>
                                         </div>
                                     </div>
                                 @endforeach
                             @endif
-{{--                            <div>--}}
-{{--                                <div class="slider-item">--}}
-{{--                                    <div class="d-flex justify-content-center pr">--}}
-{{--                                        <img src="./img/drop.png" class="slider-image" alt="">--}}
-{{--                                    </div>--}}
-{{--                                    <div class="d-flex justify-content-center">--}}
-{{--                                        <h5>Предотвратите конденсацию влаги</h5>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="d-flex justify-content-center">--}}
-{{--                                        <span>Термочехол Cold снижает потери энергии на поддержание отрицательной температуры хладопровода и предотвращает конденсацию влаги</span>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div>--}}
-{{--                                <div class="slider-item">--}}
-{{--                                    <div class="d-flex justify-content-center pr">--}}
-{{--                                        <img src="./img/snowfleke.png" class="slider-image" alt="">--}}
-{{--                                    </div>--}}
-{{--                                    <div class="d-flex justify-content-center">--}}
-{{--                                        <h5>Предотвратите замерзание</h5>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="d-flex justify-content-center">--}}
-{{--                                        <span>Термочехол Antifreeze предусматривает подогрев для предотвращения замерзания оборудования и трубопроводов</span>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div>--}}
-{{--                                <div class="slider-item">--}}
-{{--                                    <div class="d-flex justify-content-center pr">--}}
-{{--                                        <img src="./img/sound.png" class="slider-image" alt="">--}}
-{{--                                    </div>--}}
-{{--                                    <div class="d-flex justify-content-center">--}}
-{{--                                        <h5>Уменьшите шум оборудования</h5>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="d-flex justify-content-center">--}}
-{{--                                        <span>Термочехол Noise снижает уровень шума рабочей среды</span>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div>--}}
-{{--                                <div class="slider-item">--}}
-{{--                                    <div class="d-flex justify-content-center pr">--}}
-{{--                                        <img src="./img/sun.png" class="slider-image" alt="">--}}
-{{--                                    </div>--}}
-{{--                                    <div class="d-flex justify-content-center">--}}
-{{--                                        <h5>Сократите теплопотери до 75%</h5>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="d-flex justify-content-center">--}}
-{{--                                        <span>Термочехол Нeat предотвращает теплопотери до 75% и экономит Ваш</span>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
                         </div>
                         <div id="slider-btn">
                             <button class="slick-prev slick-arrow" id="adv-prev">Previous</button>

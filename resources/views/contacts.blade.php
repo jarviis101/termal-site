@@ -19,10 +19,10 @@
                         @foreach($contacts as $contact)
                             <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 contact-block">
                                 <h3 class="title-text">
-                                    {{$contact->title}}
+                                    {{$contact['title_'.$locale]}}
                                 </h3>
                                 <div class="add-text">
-                                    {!! $contact->description !!}
+                                    {!! $contact['description_'.$locale] !!}
                                 </div>
                             </div>
                         @endforeach
@@ -76,46 +76,125 @@
                         </span>
                     </div> -->
                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 contact-block">
-                        <h3 class="title-text blacked">
-                            ГРАФИК РАБОТЫ
-                        </h3>
-                        <span class="add-text blacked">
-                            ПН-ПТ: 8:30 - 17:00
-                        </span>
+                        @if($locale == 'ru')
+                            <h3 class="title-text blacked">
+                                ГРАФИК РАБОТЫ
+                            </h3>
+                            <span class="add-text blacked">
+                                ПН-ПТ: 8:30 - 17:00
+                            </span>
+                        @elseif($locale == 'ua')
+                            <h3 class="title-text blacked">
+                                ГРАФІК РОБОТИ
+                            </h3>
+                            <span class="add-text blacked">
+                                ПН-ПТ: 8:30 - 17:00
+                            </span>
+                        @elseif($locale == 'en')
+                            <h3 class="title-text blacked">
+                                Schedule
+                            </h3>
+                            <span class="add-text blacked">
+                                Mon-Fri: 8:30 am - 5:00 pm
+                            </span>
+                        @endif
                     </div>
                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 contact-block">
-                        <h3 class="title-text blacked">
-                            Обратная связь
-                        </h3>
+                        @if($locale == 'ru')
+                            <h3 class="title-text blacked">
+                                Обратная связь
+                            </h3>
+                        @elseif($locale == 'ua')
+                            <h3 class="title-text blacked">
+                                Зворотній зв'язок
+                            </h3>
+                        @elseif($locale == 'en')
+                            <h3 class="title-text blacked">
+                                Feedback
+                            </h3>
+                        @endif
                         <form action="/contact" method="POST" class="row form-contact">
                             @csrf
                             <div class="form-group col-xl-6">
-                                <input type="text" name="name" class="form-control" placeholder="Имя">
+                                @if($locale == 'ru')
+                                    <input type="text" name="name" class="form-control" placeholder="Имя">
+                                @elseif($locale == 'ua')
+                                    <input type="text" name="name" class="form-control" placeholder="Iм'я">
+                                @elseif($locale == 'en')
+                                    <input type="text" name="name" class="form-control" placeholder="Name">
+                                @endif
                             </div>
                             <div class="form-group col-xl-6">
-                                <input type="email" name="mail" class="form-control" placeholder="Электронная почта">
+                                @if($locale == 'ru')
+                                    <input type="email" name="mail" class="form-control" placeholder="Электронная почта">
+                                @elseif($locale == 'ua')
+                                    <input type="email" name="mail" class="form-control" placeholder="Електронна пошта">
+                                @elseif($locale == 'en')
+                                    <input type="email" name="mail" class="form-control" placeholder="E-mail">
+                                @endif
                             </div>
                             <div class="form-group col-xl-6">
-                                <input type="tel" name="number" class="form-control" placeholder="Телефонный номер">
+                                @if($locale == 'ru')
+                                    <input type="tel" name="number" class="form-control" placeholder="Телефонный номер">
+                                @elseif($locale == 'ua')
+                                    <input type="tel" name="number" class="form-control" placeholder="Номер телефону">
+                                @elseif($locale == 'en')
+                                    <input type="tel" name="number" class="form-control" placeholder="Telephone number">
+                                @endif
                             </div>
                             <div class="form-group col-xl-6">
-                                <input type="text" name="theme" class="form-control" placeholder="Тема">
+                                @if($locale == 'ru')
+                                    <input type="text" name="theme" class="form-control" placeholder="Тема">
+                                @elseif($locale == 'ua')
+                                    <input type="text" name="theme" class="form-control" placeholder="Тема">
+                                @elseif($locale == 'en')
+                                    <input type="text" name="theme" class="form-control" placeholder="Theme">
+                                @endif
                             </div>
                             <div class="form-group col-xl-12">
-                                <textarea class="form-control" name="message" placeholder="Сообщение"></textarea>
+                                @if($locale == 'ru')
+                                    <textarea class="form-control" name="message" placeholder="Сообщение"></textarea>
+                                @elseif($locale == 'ua')
+                                    <textarea class="form-control" name="message" placeholder="Повідомлення"></textarea>
+                                @elseif($locale == 'en')
+                                    <textarea class="form-control" name="message" placeholder="Message"></textarea>
+                                @endif
                             </div>
                             <div class="form-group col-xl-2">
-                                <input type="submit" class="btn" id="btn-send" value="Отправить">
+                                @if($locale == 'ru')
+                                    <input type="submit" class="btn" id="btn-send" value="Отправить">
+                                @elseif($locale == 'ua')
+                                    <input type="submit" class="btn" id="btn-send" value="Відправити">
+                                @elseif($locale == 'en')
+                                    <input type="submit" class="btn" id="btn-send" value="Send">
+                                @endif
                             </div>
                         </form>
                     </div>
                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 contact-block">
-                        <h3 class="title-text blacked">
-                            КАРТА ПРОЕЗДА
-                        </h3>
-                        <span class="add-text blacked">
-                            61040, м. Харків, вул.Велика Панасівська, 183
-                        </span>
+                        @if($locale == 'ru')
+                            <h3 class="title-text blacked">
+                                КАРТА ПРОЕЗДА
+                            </h3>
+                            <span class="add-text blacked">
+                                61040, г. Харьков, ул.Большая Панасовская, 183
+                            </span>
+                        @elseif($locale == 'ua')
+                            <h3 class="title-text blacked">
+                                Карта проїзду
+                            </h3>
+                            <span class="add-text blacked">
+                                61040, м. Харків, вул.Велика Панасівська, 183
+                            </span>
+                        @elseif($locale == 'en')
+                            <h3 class="title-text blacked">
+                                ROAD MAP
+                            </h3>
+                            <span class="add-text blacked">
+                                61040, M. Kharkiv, Velika Panasivska St., 183
+                            </span>
+                        @endif
+
                         <iframe class="map-embed" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2563.642336979997!2d36.190322615893706!3d50.01805862630654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4127a16a3a668b19%3A0x742a4ca71c52256a!2sVelyka%20Panasivska%20St%2C%20183%2C%20Kharkiv%2C%20Kharkivs&#39;ka%20oblast%2C%2061000!5e0!3m2!1sen!2sua!4v1593513111956!5m2!1sen!2sua" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                     </div>
                 </div>

@@ -24,7 +24,20 @@
                         </div>
                         <div class="row">
                             @if($slide->link)
-                                <a href="{{ $slide->link }}" class="btn-learn-more">Learn more</a>
+                                @if($locale == 'ru')
+                                    <a href="{{ $slide->link }}" class="btn-learn-more">
+                                        Подробнее
+                                    </a>
+                                @elseif($locale == 'ua')
+                                    <a href="{{ $slide->link }}" class="btn-learn-more">
+                                        Детальніше
+                                    </a>
+                                @elseif($locale == 'en')
+                                    <a href="{{ $slide->link }}" class="btn-learn-more">
+                                        Learn more
+                                    </a>
+                                @endif
+
                             @endif
                         </div>
                     </div>
@@ -38,7 +51,13 @@
         <div class="row">
             <div class="container">
                 <div class="row d-flex justify-content-center flex-column">
-                    <h3 class="our-target-title">Наша цель</h3>
+                    @if($locale == 'ru')
+                        <h3 class="our-target-title">Наша цель</h3>
+                    @elseif($locale == 'ua')
+                        <h3 class="our-target-title">Наша мета</h3>
+                    @elseif($locale == 'en')
+                        <h3 class="our-target-title">Our target</h3>
+                    @endif
                     <div class="col our-target-text">
                         {!! $data['content_'.$locale] !!}
                     </div>
@@ -49,7 +68,13 @@
 
     <div class="section-gallery-index">
         <div class="d-flex justify-content-center">
-            <h3 class="title-gallery">Gallery</h3>
+            @if($locale == 'ru')
+                <h3 class="title-gallery">Галерея</h3>
+            @elseif($locale == 'ua')
+                <h3 class="title-gallery">Галерея</h3>
+            @elseif($locale == 'en')
+                <h3 class="title-gallery">Gallery</h3>
+            @endif
         </div>
         <div class="">
             <style>
