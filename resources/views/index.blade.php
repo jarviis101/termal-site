@@ -1,7 +1,10 @@
+@php
+    $locale = app()->getLocale();
+@endphp
 @extends('layouts.layout', [
-    'title' => $data->title,
-    'meta_title' => $data->extras['meta_title'],
-    'meta_description' => $data->extras['meta_description'],
+    'title' => $data['title_'.$locale],
+    'meta_title' => $data->extras['meta_title_'.$locale],
+    'meta_description' => $data->extras['meta_description_'.$locale],
     'meta_keywords' => $data->extras['meta_keywords'],
 ])
 @section('content')
@@ -35,7 +38,7 @@
                 <div class="row d-flex justify-content-center flex-column">
                     <h3 class="our-target-title">Наша цель</h3>
                     <div class="col our-target-text">
-                        {!! $data->content !!}
+                        {!! $data['content_'.$locale] !!}
                     </div>
                 </div>
             </div>

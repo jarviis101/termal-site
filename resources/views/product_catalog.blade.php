@@ -1,13 +1,16 @@
+@php
+    $locale = app()->getLocale();
+@endphp
 @extends('layouts.layout', [
-    'title' => $data->title,
-    'meta_title' => $data->extras['meta_title'],
-    'meta_description' => $data->extras['meta_description'],
+    'title' => $data['title_'.$locale],
+    'meta_title' => $data->extras['meta_title_'.$locale],
+    'meta_description' => $data->extras['meta_description_'.$locale],
     'meta_keywords' => $data->extras['meta_keywords'],
 ])
 @section('content')
     <section id="catalog-section">
         <div class="d-flex justify-content-center">
-            <h1 class="title-info-section">{{$data->title}}</h1>
+            <h1 class="title-info-section">{{$data['title_'.$locale]}}</h1>
         </div>
         <div class="d-flex current-row">
             <div class="d-flex current-row-2">
@@ -19,7 +22,7 @@
 
                         }
                     </style>
-                    <h3 class="title-menu">{{$data->title}}</h3>
+                    <h3 class="title-menu">{{$data['title_'.$locale]}}</h3>
                 </div>
                 <div class="nav flex-column nav-pills col-12 nav-menu-goriz" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     @if(!empty($categories))

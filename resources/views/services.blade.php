@@ -1,7 +1,10 @@
+@php
+    $locale = app()->getLocale();
+@endphp
 @extends('layouts.layout', [
-    'title' => $data->title,
-    'meta_title' => $data->extras['meta_title'],
-    'meta_description' => $data->extras['meta_description'],
+    'title' => $data['title_'.$locale],
+    'meta_title' => $data->extras['meta_title_'.$locale],
+    'meta_description' => $data->extras['meta_description_'.$locale],
     'meta_keywords' => $data->extras['meta_keywords'],
 ])
 @section('content')
@@ -9,11 +12,11 @@
         <div class="row">
             <div class="container">
                 <div class="row justify-content-center">
-                    <h1 class="title-services-section">{{$data->title}}</h1>
+                    <h1 class="title-services-section">{{$data['title_'.$locale]}}</h1>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col additional-text">
-                        {!! $data->content !!}
+                        {!! $data['content_'.$locale] !!}
                     </div>
                 </div>
             </div>

@@ -1,7 +1,10 @@
+@php
+    $locale = app()->getLocale();
+@endphp
 @extends('layouts.layout', [
-    'title' => $data->title,
-    'meta_title' => $data->extras['meta_title'],
-    'meta_description' => $data->extras['meta_description'],
+    'title' => $data['title_'.$locale],
+    'meta_title' => $data->extras['meta_title_'.$locale],
+    'meta_description' => $data->extras['meta_description_'.$locale],
     'meta_keywords' => $data->extras['meta_keywords'],
 ])
 @section('content')
@@ -9,11 +12,11 @@
         <div class="row">
             <div class="container">
                 <div class="d-flex justify-content-center">
-                    <h1 class="title-section">{{$data->title}}</h1>
+                    <h1 class="title-section">{{$data['title_'.$locale]}}</h1>
                 </div>
                 <div class="row">
                     <div class="col-12 title-text">
-                        {!! $data->content !!}
+                        {!! $data['content_'.$locale] !!}
                     </div>
                 </div>
                 <div class="row list-of-services">
@@ -24,7 +27,7 @@
                     </style>
                     @foreach($categories as $category)
                         <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 service-item">
-                            <a href="/product_catalog">
+                            <a href="{{route('product_catalog', app()->getLocale())}}">
                                 <div class="img-block">
                                     <img src="{{asset($category->image)}}" alt="">
                                 </div>

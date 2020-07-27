@@ -2,8 +2,8 @@
     $pages = \App\Http\Controllers\PageController::get_all_pages();
 @endphp
 <nav class="navbar navbar-expand-lg navbar-light" id="nav-md">
-    <a class="navbar-brand" href="/">
-        <img src="./img/LOGO.png" alt="">
+    <a class="navbar-brand" href="{{ route('index', app()->getLocale()) }}">
+        <img src="{{asset('/img/LOGO.png')}}" alt="">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -28,54 +28,69 @@
 {{--                @endif--}}
 {{--            @endforeach--}}
             <li class="nav-item">
-                <a class="nav-link" href="/about">О компании</a>
+                <a class="nav-link" href="{{ route('about', app()->getLocale()) }}">О компании</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/services">Каталог услуг</a>
+                <a class="nav-link" href="{{ route('services', app()->getLocale()) }}">Каталог услуг</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/product_list">Каталог продукции</a>
+                <a class="nav-link" href="{{ route('product_list', app()->getLocale()) }}">Каталог продукции</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/projects">Наши проекты</a>
+                <a class="nav-link" href="{{ route('projects', app()->getLocale()) }}">Наши проекты</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/info">Инфо</a>
+                <a class="nav-link" href="{{ route('info', app()->getLocale()) }}">Инфо</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/contacts">Наши контакты</a>
+                <a class="nav-link" href="{{ route('contacts', app()->getLocale()) }}">Наши контакты</a>
             </li>
+            <style>
+                span.flag-icon-en{
+                    display: none !important;
+                }
+            </style>
+            @foreach(config('app.available_locales') as $locale)
+                <li @if(app()->getLocale() == $locale) class="nav-item" @endif>
+                    <a class="nav-link" href="{{ route(\Illuminate\Support\Facades\Route::currentRouteName(), $locale) }}">
+                        @if($locale == 'en')
+                            <span class="flag-icon flag-icon-us"></span>
+                        @endif
+                        <span class="flag-icon flag-icon-{{$locale}}"></span>
+                    </a>
+                </li>
+            @endforeach
         </ul>
     </div>
 </nav>
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <li>
-        <a href="/">Главная</a>
+        <a href="{{ route('index', app()->getLocale()) }}">Главная</a>
     </li>
     <li>
-        <a href="/about">О компании</a>
+        <a href="{{ route('about', app()->getLocale()) }}">О компании</a>
     </li>
     <li>
-        <a href="/services">Каталог услуг</a>
+        <a href="{{ route('services', app()->getLocale()) }}">Каталог услуг</a>
     </li>
     <li>
-        <a href="/product_list">Каталог продукции</a>
+        <a href="{{ route('product_list', app()->getLocale()) }}">Каталог продукции</a>
     </li>
     <li>
-        <a href="/projects">Наши проекты</a>
+        <a href="{{ route('projects', app()->getLocale()) }}">Наши проекты</a>
     </li>
     <li>
-        <a href="/info">Инфо</a>
+        <a href="{{ route('info', app()->getLocale()) }}">Инфо</a>
     </li>
     <li>
-        <a href="/contacts">Наши контакты</a>
+        <a href="{{ route('contacts', app()->getLocale()) }}">Наши контакты</a>
     </li>
     <li>
-        <a href="mail:">office@mail.com.ua</a>
+        <a href="mailto:{{ Setting::get('contact_email') }}">{{ Setting::get('contact_email') }}</a>
     </li>
     <li>
-        <a href="tel:">+38 067 572 50 73</a>
+        <a href="tel:{{ Setting::get('contact_number') }}">{{ Setting::get('contact_number') }}</a>
     </li>
 </div>
 <span onclick="openNav()" class="btn-toggle-menu">

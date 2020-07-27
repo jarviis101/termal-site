@@ -1,7 +1,10 @@
+@php
+    $locale = app()->getLocale();
+@endphp
 @extends('layouts.layout', [
-    'title' => $data->title,
-    'meta_title' => $data->extras['meta_title'],
-    'meta_description' => $data->extras['meta_description'],
+    'title' => $data['title_'.$locale],
+    'meta_title' => $data->extras['meta_title_'.$locale],
+    'meta_description' => $data->extras['meta_description_'.$locale],
     'meta_keywords' => $data->extras['meta_keywords'],
 ])
 @section('content')
@@ -14,11 +17,11 @@
         <div class="d-flex flex-column">
             <div class="container">
                 <div class="d-flex justify-content-center">
-                    <h1 class="title-section">{{$data->title}}</h1>
+                    <h1 class="title-section">{{$data['title_'.$locale]}}</h1>
                 </div>
                 <div class="row">
                     <div class="col-12 title-text">
-                        {!! $data->content !!}
+                        {!! $data['content_'.$locale] !!}
                     </div>
                 </div>
             </div>
@@ -31,7 +34,7 @@
                                     <a class="active" data-toggle="pill" href="#{{$type->slug}}" role="tab" aria-selected="true">
                                         <div class="item">
                                             <div class="img-block">
-                                                <img src="{{$type->image}}" alt="">
+                                                <img src="{{asset($type->image)}}" alt="">
                                             </div>
                                             <span>{{$type->title}}</span>
                                         </div>
@@ -40,7 +43,7 @@
                                     <a class="active" data-toggle="pill" href="#{{$type->slug}}" role="tab" aria-selected="true">
                                         <div class="item">
                                             <div class="img-block">
-                                                <img src="{{$type->image}}" alt="">
+                                                <img src="{{asset($type->image)}}" alt="">
                                             </div>
                                             <span>{{$type->title}}</span>
                                         </div>
@@ -72,7 +75,7 @@
                                                                 <div class="item-project">
                                                                     <div class="d-flex justify-content-center">
                                                                         <div class="img-project-block">
-                                                                            <img src="{{$project->image}}" alt="">
+                                                                            <img src="{{asset($project->image)}}" alt="">
                                                                         </div>
                                                                     </div>
                                                                     <h4 class="d-flex">{{$project->name}}</h4>
@@ -101,7 +104,7 @@
                                                                 <div class="item-project">
                                                                     <div class="d-flex justify-content-center">
                                                                         <div class="img-project-block">
-                                                                            <img src="{{$project->image}}" alt="">
+                                                                            <img src="{{asset($project->image)}}" alt="">
                                                                         </div>
                                                                     </div>
                                                                     <h4 class="d-flex">{{$project->name}}</h4>

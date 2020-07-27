@@ -21,7 +21,6 @@
     @endisset
 
     @include('partials.head')
-    <link rel="stylesheet" href="{{asset('/preloader.css')}}">
 </head>
 <body>
     <div class="loader"></div>
@@ -35,6 +34,5 @@
         @include('partials.footer')
     @endif
     @include('partials.scripts')
-    <script src="{{asset('/preloader.js')}}"></script>
 </body>
 </html>

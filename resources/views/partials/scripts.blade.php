@@ -5,5 +5,4 @@
 <script src="{{asset('/js/lightgallery.min.js')}}"></script>
 <script src="{{asset('/js/lg-thumbnail.min.js')}}"></script>
 <script src="{{asset('/js/lg-fullscreen.min.js')}}"></script>
-<script src="{{asset('/preloader.js')}}"></script>
 <script src="{{asset('/js/main.js')}}"></script>
